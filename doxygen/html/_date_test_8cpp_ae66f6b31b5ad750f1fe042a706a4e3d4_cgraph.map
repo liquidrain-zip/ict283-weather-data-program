@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,56,159"/>
+<area shape="rect" id="node2" href="$class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="111,5,212,32"/>
+<area shape="rect" id="node3" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="104,56,219,83"/>
+<area shape="rect" id="node4" href="$class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="109,107,214,133"/>
+<area shape="rect" id="node5" href="$class_date.html#a7b6f3262997530ea44b84dc1ff818690" title="Sets the day of the month range of 1&#45;31." alt="" coords="111,157,211,184"/>
+<area shape="rect" id="node6" href="$class_date.html#aa7814f6054a688039338ac1190d74a8d" title="Sets the month of the year range of 1&#45;12." alt="" coords="105,208,218,235"/>
+<area shape="rect" id="node7" href="$class_date.html#a795790fc0cde4220ceaf13b5ce232e4a" title="Sets the year." alt="" coords="109,259,213,285"/>
+</map>

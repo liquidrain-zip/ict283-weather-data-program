@@ -1,0 +1,6 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="node1" title="Overloads the output stream operator to write a Time to a stream." alt="" coords="5,56,91,83"/>
+<area shape="rect" id="node2" href="$class_time.html#aaf65e0dc73514ffab9b3dd643cef9bdb" title="Gets the hour of the Time object." alt="" coords="147,5,253,32"/>
+<area shape="rect" id="node3" href="$class_time.html#a86302564cc0783b402dc5f0e137a43c1" title="Gets the minute of the Time object." alt="" coords="141,56,259,83"/>
+<area shape="rect" id="node4" href="$class_time.html#a53582e9b9f6f0da1db2d3e9d11df04bc" title="Gets the second of the Time object." alt="" coords="139,107,261,133"/>
+</map>

@@ -1,0 +1,3 @@
+C:/Users/shabi/Documents/school/Current Modules/ICT 283 B/Weather/Date.h:45: warning: documented empty return type of Date::SetDay
+C:/Users/shabi/Documents/school/Current Modules/ICT 283 B/Weather/Date.h:60: warning: documented empty return type of Date::SetMonth
+C:/Users/shabi/Documents/school/Current Modules/ICT 283 B/Weather/Date.h:75: warning: documented empty return type of Date::SetYear

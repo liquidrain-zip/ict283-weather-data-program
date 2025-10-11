@@ -1,0 +1,20 @@
+digraph "Controller::ProcessMenuChoice"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Controller::ProcessMenuChoice",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Controller::CalculateAverage\lWindSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a4e7a61fc8128fd0f6b017ee083450ae6",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Vector::getCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a75165d58190702b6e1131dc61c1e3a45",tooltip="Gets the number of elements currently in the Vector."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Controller::CalculateWind\lSpeedStandardDeviation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a013ff2febc5d1c0d6c1413851bcbe58e",tooltip=" "];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Controller::PrintRecords\lNearAverageSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#ad9161ebcd058d9cc08f5c677eb20b2f7",tooltip=" "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

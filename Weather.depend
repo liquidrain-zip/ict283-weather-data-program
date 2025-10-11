@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1740295276 source:c:\users\shabi\documents\school\current modules\ict 283 b\weather\date.cpp
+	"Date.h"
+
+1740301040 c:\users\shabi\documents\school\current modules\ict 283 b\weather\date.h
+	<iostream>
+	<string>
+	<sstream>
+
+1740295212 source:c:\users\shabi\documents\school\current modules\ict 283 b\weather\time.cpp
+	"Time.h"
+
+1740299712 c:\users\shabi\documents\school\current modules\ict 283 b\weather\time.h
+	<iostream>
+	<string>
+	<sstream>
+	<iomanip>
+
+1740299637 source:c:\users\shabi\documents\school\current modules\ict 283 b\weather\main.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+	<cmath>
+	<iomanip>
+	<limits>
+	"Date.h"
+	"Time.h"
+	"Vector.h"
+
+1740299791 c:\users\shabi\documents\school\current modules\ict 283 b\weather\vector.h
+	<iostream>
+	<cassert>
+
+1740295756 source:c:\users\shabi\documents\school\current modules\ict 283 b\weather\vectortest.cpp
+	<iostream>
+	<cassert>
+	"Vector.h"
+
+1760087572 source:c:\users\muammarshabir\downloads\lab5qn5\weather\date.cpp
+	"Date.h"
+
+1760063445 c:\users\muammarshabir\downloads\lab5qn5\weather\date.h
+	<iostream>
+	<string>
+	<sstream>
+
+1760063445 source:c:\users\muammarshabir\downloads\lab5qn5\weather\datetest.cpp
+	<iostream>
+	<sstream>
+	"Date.h"
+
+1760075406 source:c:\users\muammarshabir\downloads\lab5qn5\weather\main.cpp
+	"Controller.h"
+
+1760063445 c:\users\muammarshabir\downloads\lab5qn5\weather\time.h
+	<iostream>
+	<string>
+	<sstream>
+	<iomanip>
+
+1760088575 c:\users\muammarshabir\downloads\lab5qn5\weather\vector.h
+	<cassert>
+
+1760087507 source:c:\users\muammarshabir\downloads\lab5qn5\weather\time.cpp
+	"Time.h"
+
+1760063445 source:c:\users\muammarshabir\downloads\lab5qn5\weather\timetest.cpp
+	<iostream>
+	<sstream>
+	"Time.h"
+
+1760063445 source:c:\users\muammarshabir\downloads\lab5qn5\weather\vectortest.cpp
+	<iostream>
+	<cassert>
+	"Vector.h"
+
+1760063445 source:c:\users\muammarshabir\downloads\lab5qn5\weather\vector.cpp
+
+1760087993 source:c:\users\muammarshabir\downloads\lab5qn5\weather\controller.cpp
+	"Controller.h"
+	<fstream>
+	<cmath>
+	<iomanip>
+	<string>
+
+1760087780 c:\users\muammarshabir\downloads\lab5qn5\weather\controller.h
+	<string>
+	"Date.h"
+	"Time.h"
+	"Vector.h"
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\controller.cpp
+	"Controller.h"
+	<fstream>
+	<cmath>
+	<iomanip>
+	<string>
+
+1760145933 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\controller.h
+	<string>
+	"Date.h"
+	"Time.h"
+	"Vector.h"
+
+1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\date.h
+	<iostream>
+	<string>
+	<sstream>
+
+1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\time.h
+	<iostream>
+	<string>
+	<sstream>
+	<iomanip>
+
+1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\vector.h
+	<cassert>
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\date.cpp
+	"Date.h"
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\main.cpp
+	"Controller.h"
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\time.cpp
+	"Time.h"
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\vector.cpp
+

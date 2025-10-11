@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,56,159"/>
+<area shape="rect" id="node2" href="$class_time.html#aaf65e0dc73514ffab9b3dd643cef9bdb" title="Gets the hour of the Time object." alt="" coords="112,5,219,32"/>
+<area shape="rect" id="node3" href="$class_time.html#a86302564cc0783b402dc5f0e137a43c1" title="Gets the minute of the Time object." alt="" coords="106,56,225,83"/>
+<area shape="rect" id="node4" href="$class_time.html#a53582e9b9f6f0da1db2d3e9d11df04bc" title="Gets the second of the Time object." alt="" coords="104,107,227,133"/>
+<area shape="rect" id="node5" href="$class_time.html#a7db605d36da2d61943c4084520425759" title="Sets the hour of the Time object." alt="" coords="113,157,218,184"/>
+<area shape="rect" id="node6" href="$class_time.html#a7a868f67e04befc0854a1cb99d86f802" title="Sets the minute of the Time object." alt="" coords="107,208,224,235"/>
+<area shape="rect" id="node7" href="$class_time.html#a89ab33e3aed09902984ad5ca5e317c6e" title="Sets the second of the Time object." alt="" coords="104,259,227,285"/>
+</map>

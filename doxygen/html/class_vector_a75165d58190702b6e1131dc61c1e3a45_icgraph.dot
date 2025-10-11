@@ -1,0 +1,26 @@
+digraph "Vector::getCount"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Vector::getCount",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets the number of elements currently in the Vector."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Controller::CalculateAverage\lWindSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a4e7a61fc8128fd0f6b017ee083450ae6",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Controller::ProcessMenuChoice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#af706229d2722527cece3a425127e5305",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Controller::CalculateWind\lSpeedStandardDeviation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a013ff2febc5d1c0d6c1413851bcbe58e",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Controller::LoadRecords",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a57c67a9abd69182d785e9dc76f1818f4",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Controller::PrintRecords\lNearAverageSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#ad9161ebcd058d9cc08f5c677eb20b2f7",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

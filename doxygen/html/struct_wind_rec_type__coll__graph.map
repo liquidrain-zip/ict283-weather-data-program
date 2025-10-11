@@ -1,0 +1,5 @@
+<map id="WindRecType" name="WindRecType">
+<area shape="rect" id="node1" title=" " alt="" coords="70,248,173,325"/>
+<area shape="rect" id="node2" href="$class_time.html" title="Represents a time of day with hour, minute, and second." alt="" coords="5,5,112,185"/>
+<area shape="rect" id="node3" href="$class_date.html" title="Declaration of the Date class." alt="" coords="136,5,235,185"/>
+</map>

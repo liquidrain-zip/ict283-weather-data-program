@@ -1,0 +1,6 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="node1" title="Overloads the output stream operator to write a Date to a stream." alt="" coords="5,56,91,83"/>
+<area shape="rect" id="node2" href="$class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="145,5,247,32"/>
+<area shape="rect" id="node3" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="139,56,253,83"/>
+<area shape="rect" id="node4" href="$class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="143,107,249,133"/>
+</map>
