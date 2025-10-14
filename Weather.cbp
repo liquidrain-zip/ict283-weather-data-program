@@ -31,8 +31,31 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Controller.cpp" />
+		<Unit filename="Controller.h" />
+		<Unit filename="Date.cpp" />
+		<Unit filename="Date.h" />
+		<Unit filename="DateTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="Time.cpp" />
+		<Unit filename="Time.h" />
+		<Unit filename="TimeTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="Vector.h" />
+		<Unit filename="VectorTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

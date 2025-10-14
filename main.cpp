@@ -4,17 +4,18 @@ int main()
 {
     // 0. Data store
     Controller weatherController;
-    WindLogType windRecords;
-    const string filename = "data/MetData-31-3.csv";
+    WeatherRecords weatherRecords;
+    const string filename = "data/data_source.txt";
+    int recordsCount = weatherController.LoadAllRecordsFromSourceFile(weatherRecords, filename);
 
     // 1. Input / Load
-    if (weatherController.LoadRecords(windRecords, filename) == -1) {
-        cerr << "Error loading records. Program terminating." << endl;
-        return 1;
+    if (recordsCount > 0) {
+        cout << "Successfully loaded " << weatherRecords.getCount() << " weather records." << endl;
     }
     else
     {
-        cout << "Successfully loaded " << windRecords.getCount() << " wind records." << endl;
+        cerr << "Error loading records. Program terminating." << endl;
+        return 1;
     }
 
 
@@ -32,7 +33,7 @@ int main()
             continue;
         }
 
-        weatherController.ProcessMenuChoice(choice, windRecords);
+        weatherController.ProcessMenuChoice(choice, weatherRecords);
 
         cout << endl;
 

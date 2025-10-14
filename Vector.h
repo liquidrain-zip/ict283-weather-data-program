@@ -2,6 +2,9 @@
 #define VECTOR_H_INCLUDED
 
 #include <cassert>
+#include <stdexcept>
+
+const int INITIAL_CAPACITY = 20;
 
 /**
  * @brief A dynamic array class (vector) template.
@@ -19,126 +22,120 @@ public:
      * @brief Constructor for Vector with initial capacity.
      *
      * @param initialCapacity The initial allocated size for the vector.
-     *
-     * Allocates memory for the vector with the specified initial capacity.
-     * If initialCapacity is less than 1, it defaults to 1.
      */
     Vector(int initialCapacity);
 
     /**
      * @brief Default constructor for Vector.
      *
-     * Initializes an empty vector with a default capacity of 1.
+     * Initializes an empty vector with a default capacity of INITIAL_CAPACITY.
      */
     Vector();
 
     /**
      * @brief Destructor for Vector.
-     *
-     * Deallocates the dynamically allocated memory used by the vector's data array.
      */
     ~Vector();
 
     /**
-     * @brief Copy constructor for Vector.
+     * @brief Copy constructor for Vector (Deep Copy Method 1).
      *
      * @param myVector The Vector object to copy.
-     *
-     * Creates a new Vector object as a copy of another Vector object,
-     * performing a deep copy of the elements.
      */
     Vector(const Vector& myVector);
 
     /**
-     * @brief Assignment operator for Vector.
+     * @brief Assignment operator for Vector (Deep Copy Method 2).
      *
      * @param myVector The Vector object to assign from.
      * @return Vector& A reference to the current Vector object after assignment.
-     *
-     * Assigns the contents of one Vector object to another,
-     * handling self-assignment and performing deep copy if necessary.
      */
     Vector& operator=(const Vector& myVector);
 
     /**
-     * @brief Access operator for Vector (non-const version).
-     *
-     * @param index The index of the element to access.
-     * @return T& A reference to the element at the specified index.
-     * @throws AssertException if index is out of bounds.
-     *
-     * Returns a modifiable reference to the element at the given index.
-     * Asserts that the index is within the valid range (0 to count-1).
-     */
-    T& operator[](int index);
-
-    /**
-     * @brief Access operator for Vector (const version).
+     * @brief Access operator for Vector (const version - get element).
      *
      * @param index The index of the element to access.
      * @return const T& A const reference to the element at the specified index.
-     * @throws AssertException if index is out of bounds.
-     *
-     * Returns a read-only (constant) reference to the element at the given index.
-     * Asserts that the index is within the valid range (0 to count-1).
+     * @throws std::out_of_range if index is out of bounds.
      */
-    const T& operator[](int index) const;
+    const T& operator[](int index) const; // get element
 
     /**
-     * @brief Inserts a value at the end of the Vector.
+     * @brief Access operator for Vector (non-const version - modify element).
      *
-     * @param value The value to insert.
-     *
-     * Appends a new element with the given value to the end of the vector.
-     * Resizes the vector's internal array if necessary to accommodate the new element.
+     * @param index The index of the element to access.
+     * @return T& A non-const reference to the element at the specified index.
+     * @throws std::out_of_range if index is out of bounds.
      */
-    void insert(const T& value);
+    T& operator[](int index); // modify element
+
+    /**
+     * @brief Inserts a data at the specified index.
+     *
+     * @param data The data to insert.
+     * @param index The index where it should be inserted (0 to getCount()).
+     * @return true if insertion was successful, false otherwise (e.g., invalid index).
+     */
+    bool Insert(const T& data, int index); // change
+
+    /**
+     * @brief Deletes the element at the specified index.
+     *
+     * @param index The index of the element to delete (0 to getCount() - 1).
+     * @return true if deletion was successful, false otherwise (e.g., invalid index or empty).
+     */
+    bool Delete(int index); // add
 
     /**
      * @brief Gets the number of elements currently in the Vector.
      *
      * @return int The current element count.
-     *
-     * Returns the number of elements that have been inserted into the vector.
-     * This is not the same as the allocated capacity.
      */
     int getCount() const;
+
+private:
+    T* m_vector;      //!< Pointer to the dynamically allocated array of elements.
+    int m_capacity;  //!< The current allocated size of the m_vector array.
+    int m_count;     //!< The number of elements currently stored in the vector.
 
     /**
      * @brief Gets the allocated capacity of the Vector.
      *
      * @return int The current capacity.
-     *
-     * Returns the total number of elements the vector's internal array can currently hold
-     * without needing to resize. This is greater than or equal to the element count.
      */
     int getCapacity() const;
 
-private:
-    T* m_vector;     //!< Pointer to the dynamically allocated array of elements.
-    int m_capacity;  //!< The current allocated size of the m_vector array.
-    int m_count;     //!< The number of elements currently stored in the vector.
-
     /**
      * @brief Resizes the internal array to double its capacity.
-     *
-     * Called when the vector is full and a new element is inserted.
-     * Creates a new array with double the current capacity, copies existing elements,
-     * and updates the vector to use the new array.
      */
     void Resize();
 };
 
 template <class T>
-Vector<T>::Vector(): m_capacity(1), m_count(0), m_vector(nullptr)
+Vector<T>::Vector(): m_capacity(INITIAL_CAPACITY), m_count(0), m_vector(nullptr)
 {
     m_vector = new T[m_capacity];
 }
 
 template <class T>
-Vector<T>::Vector(int initialCapacity): m_capacity(initialCapacity), m_count(0), m_vector(nullptr)
+Vector<T>::Vector(int initialCapacity)
 {
-    m_vector = new T[m_capacity];
+    if (initialCapacity > 0)
+    {
+        m_capacity = initialCapacity;
+    }
+    else
+    {
+        m_capacity = INITIAL_CAPACITY;
+    }
+    m_vector = new T[m_capacity]; //attempt to get heap memory
+
+    if (m_vector == nullptr)
+    {
+        m_capacity = 0;
+    }
+    m_count = 0;
 }
 
 template <class T>
@@ -146,22 +143,22 @@ Vector<T>::~Vector()
 {
     delete[] m_vector;
     m_vector = nullptr;
-    m_capacity = 0;
-    m_count = 0;
 }
 
+// Deep Copy Method 1: Copy Constructor
 template <class T>
 Vector<T>::Vector(const Vector& myVector)
 {
     m_capacity = myVector.m_capacity;
     m_count = myVector.m_count;
-    m_vector = nullptr;
+    m_vector = nullptr; // Initialize to nullptr before new
     m_vector = new T[m_capacity];
     for (int i = 0; i < m_count; ++i) {
         m_vector[i] = myVector.m_vector[i];
     }
 }
 
+// Deep Copy Method 2: Assignment Operator
 template <class T>
 Vector<T>& Vector<T>::operator = (const Vector& myVector)
 {
@@ -169,11 +166,13 @@ Vector<T>& Vector<T>::operator = (const Vector& myVector)
         return *this;
     }
 
-    if (m_capacity != myVector.m_capacity || (m_capacity == 0 && myVector.m_capacity > 0) ) {
+    // Check if current capacity is enough; if not, reallocate
+    if (m_capacity < myVector.m_count) {
         delete[] m_vector;
         m_capacity = myVector.m_capacity;
         m_vector = new T[m_capacity];
     }
+
     m_count = myVector.m_count;
     for (int i = 0; i < m_count; ++i) {
         m_vector[i] = myVector.m_vector[i];
@@ -181,29 +180,78 @@ Vector<T>& Vector<T>::operator = (const Vector& myVector)
     return *this;
 }
 
-
-template <class T>
-T& Vector<T>::operator[](int index)
-{
-    assert(index >= 0 && index < m_count); // Bounds check: index must be valid
-    return m_vector[index];
-}
-
+// Access operator (const version - get element)
 template <class T>
 const T& Vector<T>::operator[](int index) const
 {
-    assert(index >= 0 && index < m_count); // Bounds check for const version as well
+    // Changed assert to a throw for better non-debug error handling, but kept the bounds check logic.
+    if (index < 0 || index >= m_count) {
+        throw std::out_of_range("Vector index out of bounds (const version).");
+    }
     return m_vector[index];
 }
 
+// Access operator (non-const version - modify element)
 template <class T>
-void Vector<T>::insert(const T& value)
+T& Vector<T>::operator[](int index)
 {
-    if (m_count == m_capacity) {
+    if (index < 0 || index >= m_count) {
+        throw std::out_of_range("Vector index out of bounds (non-const version).");
+    }
+    return m_vector[index];
+}
+
+// Insert at specific index (change)
+template <class T>
+bool Vector<T>::Insert(const T& data, int index)
+{
+    // Valid index is 0 <= index <= m_count (allows insertion at the end)
+    if (index < 0 || index > m_count)
+    {
+        return false;
+    }
+
+    if (m_count == m_capacity)
+    {
         Resize();
     }
-    m_vector[m_count++] = value;
+
+    // Shift elements to the right to make space for the new element
+    for (int i = m_count; i > index; --i)
+    {
+        m_vector[i] = m_vector[i - 1];
+    }
+
+    m_vector[index] = data;
+    m_count++;
+    return true;
 }
+
+// Delete at specific index (add)
+template <class T>
+bool Vector<T>::Delete(int index)
+{
+    // Valid index is 0 <= index < m_count
+    if (index < 0 || index >= m_count)
+    {
+        return false;
+    }
+
+    if (m_count == 0)
+    {
+        return false; // Cannot delete from an empty vector
+    }
+
+    // Shift elements to the left to overwrite the deleted element
+    for (int i = index; i < m_count - 1; ++i)
+    {
+        m_vector[i] = m_vector[i + 1];
+    }
+
+    m_count--;
+    return true;
+}
+
 
 template <class T>
 int Vector<T>::getCount() const
@@ -221,7 +269,7 @@ template <class T>
 void Vector<T>::Resize()
 {
     int newCapacity = m_capacity * 2;
-    if (newCapacity < 1) newCapacity = 1;
+    if (newCapacity < 1) newCapacity = INITIAL_CAPACITY;
 
     T* newVector = new T[newCapacity];
 

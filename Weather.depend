@@ -90,7 +90,7 @@
 	"Time.h"
 	"Vector.h"
 
-1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\controller.cpp
+1760151830 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\controller.cpp
 	"Controller.h"
 	<fstream>
 	<cmath>
@@ -114,7 +114,7 @@
 	<sstream>
 	<iomanip>
 
-1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\vector.h
+1760152059 c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\vector.h
 	<cassert>
 
 1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\date.cpp
@@ -127,4 +127,57 @@
 	"Time.h"
 
 1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\lab5qn5\weather\vector.cpp
+
+1760427486 source:c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\controller.cpp
+	"Controller.h"
+	<fstream>
+	<cmath>
+	<iomanip>
+	<string>
+	<sstream>
+	<algorithm>
+
+1760427406 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\controller.h
+	"Types.h"
+	"Statistics.h"
+	<string>
+	<iostream>
+
+1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\date.h
+	<iostream>
+	<string>
+	<sstream>
+
+1760144946 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\time.h
+	<iostream>
+	<string>
+	<sstream>
+	<iomanip>
+
+1760427674 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\vector.h
+	<cassert>
+	<stdexcept>
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\date.cpp
+	"Date.h"
+
+1760427613 source:c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\main.cpp
+	"Controller.h"
+
+1760144946 source:c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\time.cpp
+	"Time.h"
+
+1760427141 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\types.h
+	"Date.h"
+	"Time.h"
+	"Vector.h"
+	<string>
+
+1760425374 c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\statistics.h
+	"Types.h"
+	<cmath>
+
+1760425358 source:c:\users\shabi\documents\school\current modules\ict 283 c\a1\weather\statistics.cpp
+	"Statistics.h"
+	<stdexcept>
 
