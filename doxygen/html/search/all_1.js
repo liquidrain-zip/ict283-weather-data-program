@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['date_6',['Date',['../class_date.html',1,'Date'],['../class_date.html#a4e59ed4ba66eec61c27460c5d09fa1bd',1,'Date::Date()'],['../class_date.html#ab1ad19969fa570605a6b0cd32b0da822',1,'Date::Date(int day, int month, int year)']]],
-  ['date_2ecpp_7',['Date.cpp',['../_date_8cpp.html',1,'']]],
-  ['date_2eh_8',['Date.h',['../_date_8h.html',1,'']]],
-  ['date_5fdelimiter_9',['DATE_DELIMITER',['../_controller_8h.html#a4570351787fa97d712f51ae71cee11e7',1,'Controller.h']]],
-  ['datetest_2ecpp_10',['DateTest.cpp',['../_date_test_8cpp.html',1,'']]],
-  ['displaymenu_11',['DisplayMenu',['../class_controller.html#a3024b4495bba0192743de0d81cafa273',1,'Controller']]]
+  ['calculateaverage_1',['CalculateAverage',['../class_statistics.html#aed009f34526ba28d02659e71830eafde',1,'Statistics']]],
+  ['calculatestandarddeviation_2',['CalculateStandardDeviation',['../class_statistics.html#a353eea00f1515fb4c52ac72de7b50fb3',1,'Statistics']]],
+  ['calculatetotal_3',['CalculateTotal',['../class_statistics.html#a334275cd49547c1d4bd39bd15fe3be07',1,'Statistics']]],
+  ['controller_4',['Controller',['../class_controller.html',1,'']]],
+  ['controller_2ecpp_5',['Controller.cpp',['../_controller_8cpp.html',1,'']]],
+  ['controller_2eh_6',['Controller.h',['../_controller_8h.html',1,'']]],
+  ['csv_5fdelimiter_7',['CSV_DELIMITER',['../_types_8h.html#a995cdc5459a0e516efa118aa4bdcc61d',1,'Types.h']]]
 ];

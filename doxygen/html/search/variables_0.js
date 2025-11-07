@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['csv_5fdelimiter_98',['CSV_DELIMITER',['../_controller_8h.html#a995cdc5459a0e516efa118aa4bdcc61d',1,'Controller.h']]]
+  ['air_5ftemp_5fcolumn_116',['AIR_TEMP_COLUMN',['../_types_8h.html#aceb232cbfe6c4e79a509aeb5dc074356',1,'Types.h']]]
 ];

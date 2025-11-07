@@ -39,11 +39,18 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="Statistics.cpp" />
+		<Unit filename="Statistics.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Time.cpp" />
 		<Unit filename="Time.h" />
 		<Unit filename="TimeTest.cpp">
 			<Option compile="0" />
 			<Option link="0" />
+		</Unit>
+		<Unit filename="Types.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Vector.h" />
 		<Unit filename="VectorTest.cpp">

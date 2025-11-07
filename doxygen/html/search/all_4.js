@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadrecords_21',['LoadRecords',['../class_controller.html#a57c67a9abd69182d785e9dc76f1818f4',1,'Controller']]]
+  ['initial_5fcapacity_24',['INITIAL_CAPACITY',['../_vector_8h.html#ac275d2be70a1ea35ee1fee1a24b1e76c',1,'Vector.h']]],
+  ['insert_25',['Insert',['../class_vector.html#a554169987168b63ae4e87f5de0c13561',1,'Vector']]]
 ];

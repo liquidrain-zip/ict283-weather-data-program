@@ -77,7 +77,7 @@ public:
      * @param index The index where it should be inserted (0 to getCount()).
      * @return true if insertion was successful, false otherwise (e.g., invalid index).
      */
-    bool Insert(const T& data, int index); // change
+    bool Insert(const T& data, int index);
 
     /**
      * @brief Deletes the element at the specified index.
@@ -85,7 +85,7 @@ public:
      * @param index The index of the element to delete (0 to getCount() - 1).
      * @return true if deletion was successful, false otherwise (e.g., invalid index or empty).
      */
-    bool Delete(int index); // add
+    bool Delete(int index);
 
     /**
      * @brief Gets the number of elements currently in the Vector.
@@ -94,17 +94,17 @@ public:
      */
     int getCount() const;
 
-private:
-    T* m_vector;      //!< Pointer to the dynamically allocated array of elements.
-    int m_capacity;  //!< The current allocated size of the m_vector array.
-    int m_count;     //!< The number of elements currently stored in the vector.
-
     /**
      * @brief Gets the allocated capacity of the Vector.
      *
      * @return int The current capacity.
      */
     int getCapacity() const;
+
+private:
+    T* m_vector;      //!< Pointer to the dynamically allocated array of elements.
+    int m_capacity;  //!< The current allocated size of the m_vector array.
+    int m_count;     //!< The number of elements currently stored in the vector.
 
     /**
      * @brief Resizes the internal array to double its capacity.
@@ -201,7 +201,7 @@ T& Vector<T>::operator[](int index)
     return m_vector[index];
 }
 
-// Insert at specific index (change)
+// Insert at specific index
 template <class T>
 bool Vector<T>::Insert(const T& data, int index)
 {

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['m_5fdate_100',['m_date',['../struct_wind_rec_type.html#af5a693d359c552a1ef6d094b43307c65',1,'WindRecType']]],
-  ['m_5fspeed_101',['m_speed',['../struct_wind_rec_type.html#afbbca29336550361c76fbfce10b9bacb',1,'WindRecType']]],
-  ['m_5ftime_102',['m_time',['../struct_wind_rec_type.html#a2e9b654daef708166e4089fd516cbf7a',1,'WindRecType']]]
+  ['date_5fdelimiter_118',['DATE_DELIMITER',['../_types_8h.html#a4570351787fa97d712f51ae71cee11e7',1,'Types.h']]],
+  ['date_5ftime_5fcolumn_119',['DATE_TIME_COLUMN',['../_types_8h.html#a0b663dcdee4b5ab04318270326ff04c1',1,'Types.h']]]
 ];

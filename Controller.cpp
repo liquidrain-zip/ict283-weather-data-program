@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
-#include <algorithm> // For std::count
+#include <algorithm>
 
 using std::ifstream;
 using std::stringstream;
@@ -14,6 +14,7 @@ using std::ofstream;
 using std::abs;
 using std::stoi;
 using std::stof;
+using std::getline;
 
 void Controller::DisplayMenu()
 {
@@ -21,7 +22,7 @@ void Controller::DisplayMenu()
     cout << "-------------------------\n";
     cout << "1. Average wind speed and sample standard deviation (specific month and year)\n";
     cout << "2. Average ambient air temperature and sample standard deviation (each month of a year)\n";
-    cout << "3. Total solar radiation (each month of a year)\n";
+    cout << "3. Calculate sPCC result for S_T, S_R & T_R (specific month for all years)\n";
     cout << "4. Output monthly summary to file (WindTempSolar.csv)\n";
     cout << "5. Exit\n";
     cout << "-------------------------\n";
@@ -161,7 +162,7 @@ int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & file
     // --- 2. Validation ---
     if (dateTimeIndex == -1 || windSpeedIndex == -1 || tempIndex == -1 || solarRadIndex == -1)
     {
-        cerr << "Error: One or more required columns ('Date/Time', 'S', 'T', 'SR') not found in the header." << endl;
+        cerr << "Error: One or more required columns ('WAST', 'S', 'T', 'SR') not found in the header." << endl;
         inFile.close();
         return -1;
     }
@@ -202,37 +203,35 @@ int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & file
         month = stoi(tempStr);
         getline(dateStream, tempStr);
         year = stoi(tempStr);
-
-        record.m_date.SetDay(day);
-        record.m_date.SetMonth(month);
-        record.m_date.SetYear(year);
+        Date recordDate(day, month, year);
+        record.SetDate(recordDate);
 
         // 2. Parse Time (H:M)
         stringstream timeStream(timePart);
-        int hour, minute;
+        int hour, minute, second;
 
         // Get Hour, Minute
         getline(timeStream, tempStr, TIME_DELIMITER);
         hour = stoi(tempStr);
-        getline(timeStream, tempStr);
+        getline(timeStream, tempStr, TIME_DELIMITER);
         minute = stoi(tempStr);
+        getline(timeStream, tempStr);
+        second = stoi(tempStr);
 
-        record.m_time.SetHour(hour);
-        record.m_time.SetMinute(minute);
-        record.m_time.SetSecond(0); // Set seconds to 0
-
+        Time recordTime(hour, minute, second);
+        record.SetTime(recordTime);
 
         // --- B. Parse Data Values ---
         try
         {
             // Wind Speed (S): Assumed in m/s, converted to km/h (multiplying by 3.6)
-            record.m_windSpeed = std::stof(tokens[windSpeedIndex]) * 3.6f;
+            record.SetWindSpeed(std::stof(tokens[windSpeedIndex]) * 3.6f);
 
             // Temperature (T)
-            record.m_temperature = std::stof(tokens[tempIndex]);
+            record.SetTemperature(std::stof(tokens[tempIndex]));
 
             // Solar Radiation (SR)
-            record.m_solarRadiation = std::stof(tokens[solarRadIndex]);
+            record.SetSolarRadiation(std::stof(tokens[solarRadIndex]));
         }
         catch (const std::invalid_argument& e)
         {
@@ -268,14 +267,8 @@ int Controller::LoadAllRecordsFromSourceFile(WeatherRecords& weatherRecords, con
     int filesProcessed = 0;
 
     // read filenames line by line from the source file
-    while (std::getline(sourceFile, filename))
+    while (getline(sourceFile, filename))
     {
-        // skip empty lines or lines with only whitespace
-        if (filename.empty() || filename.find_first_not_of(" \t\n\r") == std::string::npos)
-        {
-            continue;
-        }
-
         cout << "Loading data from: " << filename << "... ";
 
         // call LoadRecords function for the current file
@@ -320,7 +313,8 @@ WeatherRecords Controller::getRecordsForMonthAndYear(int month, int year, const 
     for (int i = 0; i < weatherRecords.getCount(); ++i)
     {
         const WeatherRecord& record = weatherRecords[i];
-        if (record.m_date.GetMonth() == month && record.m_date.GetYear() == year)
+        const Date& recordDate = record.GetDate();
+        if (recordDate.GetMonth() == month && recordDate.GetYear() == year)
         {
             filteredRecords.Insert(record, insertIndex);
             insertIndex++;
@@ -393,8 +387,14 @@ void Controller::displayMonthlyTotalSolarRadiation(int year, const WeatherRecord
             continue;
         }
 
-        // Calculate total solar radiation and convert from W-h/m2 to kWh/m2 (dividing by 1000)
-        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR") / 1000.0;
+        // Record taken 10min apart
+        double time_step = 10.0 / 60.0;
+        // Calculate total in W/m2
+        double total_W_m2 = Statistics::CalculateTotal(filtered, "SR");
+        // Convert power (W/m2) to energy (Wh/m2) by multiplying by the time step
+        double total_Wh_m2 = total_W_m2 * time_step;
+        // Convert Wh/m2 to kWh/m2
+        double totalSolarRad = total_Wh_m2 / 1000.0;
 
         cout << fixed << setprecision(1) << totalSolarRad << " kWh/m2" << endl;
     }
@@ -412,9 +412,6 @@ void Controller::outputMonthlyWindTempSolarSummary(int year, const WeatherRecord
 
     outputFile << year << endl;
     bool hasAnyMonthlyData = false;
-
-    // Output Header (as implied by example: Year Month,Avg Wind (stdev),Avg Temp (stdev),Total Solar)
-    outputFile << "Month,Average Wind Speed(stdev),Average Ambient Temperature(stdev),Solar Radiation" << endl;
 
     for (int month = 1; month <= 12; ++month)
     {
@@ -442,10 +439,6 @@ void Controller::outputMonthlyWindTempSolarSummary(int year, const WeatherRecord
         outputFile << fixed << setprecision(1) << avgSpeed << "(" << fixed << setprecision(1) << stDevSpeed << "),";
 
         // 2. Average Ambient Temperature (T)
-        // If count < 2, stdev is 0.0, which is printed. If data for T was missing entirely, the avg/stdev would be 0.0(0.0).
-        // To achieve the blank output format (e.g., February,4.5(3.1), ,200.3) for missing data in a field,
-        // you would need robust error checking during the LoadRecords phase.
-        // Assuming data is available if the record count > 0:
         outputFile << fixed << setprecision(1) << avgTemp << "(" << fixed << setprecision(1) << stDevTemp << "),";
 
         // 3. Total Solar Radiation (SR)

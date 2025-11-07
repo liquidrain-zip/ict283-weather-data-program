@@ -1,14 +1,15 @@
 #include "Statistics.h"
+#include "WeatherRecord.h"
 #include <stdexcept>
 
 float Statistics::GetValue(const WeatherRecord& record, string dataType)
 {
     if (dataType == WIND_SPEED_COLUMN) {
-        return record.m_windSpeed;
+        return record.GetWindSpeed();
     } else if (dataType == AIR_TEMP_COLUMN) {
-        return record.m_temperature;
+        return record.GetTemperature();
     } else if (dataType == SOLAR_RAD_COLUMN) {
-        return record.m_solarRadiation;
+        return record.GetSolarRadiation();
     }
     return 0.0f;
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_53',['Time',['../class_time.html',1,'']]]
+  ['statistics_66',['Statistics',['../class_statistics.html',1,'']]]
 ];

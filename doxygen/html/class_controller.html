@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Wind Speed Analysis: Controller Class Reference</title>
+<title>Weather Data Analysis: Controller Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Wind Speed Analysis
+   <div id="projectname">Weather Data Analysis
    &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('class_controller.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
-<p>Declaration of the <a class="el" href="class_controller.html" title="Declaration of the Controller class.">Controller</a> class.  
+<p>Defines the <a class="el" href="class_controller.html" title="Defines the Controller class, handling I/O, menu, user input validation, data filtering,...">Controller</a> class, handling I/O, menu, user input validation, data filtering, and delegating calculations to the <a class="el" href="class_statistics.html" title="Handles all statistical calculations for weather data.">Statistics</a> class.  
  <a href="class_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_controller_8h_source.html">Controller.h</a>&gt;</code></p>
@@ -102,91 +102,25 @@ Collaboration diagram for Controller:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a57c67a9abd69182d785e9dc76f1818f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a57c67a9abd69182d785e9dc76f1818f4">LoadRecords</a> (<a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;windRecords, const string &amp;filename)</td></tr>
-<tr class="separator:a57c67a9abd69182d785e9dc76f1818f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7a61fc8128fd0f6b017ee083450ae6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a4e7a61fc8128fd0f6b017ee083450ae6">CalculateAverageWindSpeed</a> (const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;windData)</td></tr>
-<tr class="separator:a4e7a61fc8128fd0f6b017ee083450ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a013ff2febc5d1c0d6c1413851bcbe58e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a013ff2febc5d1c0d6c1413851bcbe58e">CalculateWindSpeedStandardDeviation</a> (const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;windData, double averageSpeed)</td></tr>
-<tr class="separator:a013ff2febc5d1c0d6c1413851bcbe58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9161ebcd058d9cc08f5c677eb20b2f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad9161ebcd058d9cc08f5c677eb20b2f7">PrintRecordsNearAverageSpeed</a> (const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;windData, double averageSpeed, double tolerance)</td></tr>
-<tr class="separator:ad9161ebcd058d9cc08f5c677eb20b2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338a44d6db1992207acf28198b5b1755"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a338a44d6db1992207acf28198b5b1755">LoadRecords</a> (<a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords, const string &amp;filename)</td></tr>
+<tr class="memdesc:a338a44d6db1992207acf28198b5b1755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads weather records from a specified file into the WeatherRecords container.  <a href="class_controller.html#a338a44d6db1992207acf28198b5b1755">More...</a><br /></td></tr>
+<tr class="separator:a338a44d6db1992207acf28198b5b1755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a80d4dd1c0a2ed1ad007a3b6e56228d6f">LoadAllRecordsFromSourceFile</a> (<a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords, const string &amp;sourceFilename)</td></tr>
+<tr class="memdesc:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads records from all filenames listed in the specified source file.  <a href="class_controller.html#a80d4dd1c0a2ed1ad007a3b6e56228d6f">More...</a><br /></td></tr>
+<tr class="separator:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3024b4495bba0192743de0d81cafa273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a3024b4495bba0192743de0d81cafa273">DisplayMenu</a> ()</td></tr>
+<tr class="memdesc:a3024b4495bba0192743de0d81cafa273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu options to the user.  <a href="class_controller.html#a3024b4495bba0192743de0d81cafa273">More...</a><br /></td></tr>
 <tr class="separator:a3024b4495bba0192743de0d81cafa273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af706229d2722527cece3a425127e5305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af706229d2722527cece3a425127e5305">ProcessMenuChoice</a> (int choice, const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;windRecords)</td></tr>
-<tr class="separator:af706229d2722527cece3a425127e5305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc1d9566abe866394a4c76c64fc0bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#adbc1d9566abe866394a4c76c64fc0bad">ProcessMenuChoice</a> (int choice, const <a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords)</td></tr>
+<tr class="memdesc:adbc1d9566abe866394a4c76c64fc0bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the user's menu choice, prompts for necessary input, and runs the requested report.  <a href="class_controller.html#adbc1d9566abe866394a4c76c64fc0bad">More...</a><br /></td></tr>
+<tr class="separator:adbc1d9566abe866394a4c76c64fc0bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66">splitString</a> (const string &amp;s, char delimiter)</td></tr>
+<tr class="memdesc:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a>.  <a href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66">More...</a><br /></td></tr>
 <tr class="separator:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaration of the <a class="el" href="class_controller.html" title="Declaration of the Controller class.">Controller</a> class. </p>
-<p>This file defines the <a class="el" href="class_controller.html" title="Declaration of the Controller class.">Controller</a> class, which displays a menu, data processing and printing out </p>
+<div class="textblock"><p>Defines the <a class="el" href="class_controller.html" title="Defines the Controller class, handling I/O, menu, user input validation, data filtering,...">Controller</a> class, handling I/O, menu, user input validation, data filtering, and delegating calculations to the <a class="el" href="class_statistics.html" title="Handles all statistical calculations for weather data.">Statistics</a> class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4e7a61fc8128fd0f6b017ee083450ae6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e7a61fc8128fd0f6b017ee083450ae6">&#9670;&nbsp;</a></span>CalculateAverageWindSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Controller::CalculateAverageWindSpeed </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;&#160;</td>
-          <td class="paramname"><em>windData</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_a4e7a61fc8128fd0f6b017ee083450ae6_cgraph.png" border="0" usemap="#class_controller_a4e7a61fc8128fd0f6b017ee083450ae6_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_a4e7a61fc8128fd0f6b017ee083450ae6_icgraph.png" border="0" usemap="#class_controller_a4e7a61fc8128fd0f6b017ee083450ae6_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="a013ff2febc5d1c0d6c1413851bcbe58e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a013ff2febc5d1c0d6c1413851bcbe58e">&#9670;&nbsp;</a></span>CalculateWindSpeedStandardDeviation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Controller::CalculateWindSpeedStandardDeviation </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;&#160;</td>
-          <td class="paramname"><em>windData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>averageSpeed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_a013ff2febc5d1c0d6c1413851bcbe58e_cgraph.png" border="0" usemap="#class_controller_a013ff2febc5d1c0d6c1413851bcbe58e_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_a013ff2febc5d1c0d6c1413851bcbe58e_icgraph.png" border="0" usemap="#class_controller_a013ff2febc5d1c0d6c1413851bcbe58e_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
 <a id="a3024b4495bba0192743de0d81cafa273"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3024b4495bba0192743de0d81cafa273">&#9670;&nbsp;</a></span>DisplayMenu()</h2>
 
@@ -201,6 +135,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Displays the main menu options to the user. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -209,8 +145,56 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a57c67a9abd69182d785e9dc76f1818f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c67a9abd69182d785e9dc76f1818f4">&#9670;&nbsp;</a></span>LoadRecords()</h2>
+<a id="a80d4dd1c0a2ed1ad007a3b6e56228d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d4dd1c0a2ed1ad007a3b6e56228d6f">&#9670;&nbsp;</a></span>LoadAllRecordsFromSourceFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Controller::LoadAllRecordsFromSourceFile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
+          <td class="paramname"><em>weatherRecords</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>sourceFilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads records from all filenames listed in the specified source file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weatherRecords</td><td>The container to store ALL loaded data. </td></tr>
+    <tr><td class="paramname">sourceFilename</td><td>The file containing the list of CSV filenames (e.g., "data_source.txt"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of records loaded from all files, or -1 on critical error. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_cgraph.png" border="0" usemap="#class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_icgraph.png" border="0" usemap="#class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a338a44d6db1992207acf28198b5b1755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338a44d6db1992207acf28198b5b1755">&#9670;&nbsp;</a></span>LoadRecords()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,8 +202,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int Controller::LoadRecords </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;&#160;</td>
-          <td class="paramname"><em>windRecords</em>, </td>
+          <td class="paramtype"><a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
+          <td class="paramname"><em>weatherRecords</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -234,65 +218,31 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads weather records from a specified file into the WeatherRecords container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weatherRecords</td><td>The container to store the loaded data. </td></tr>
+    <tr><td class="paramname">filename</td><td>The path to the data file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of records loaded, or -1 on error. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a57c67a9abd69182d785e9dc76f1818f4_cgraph.png" border="0" usemap="#class_controller_a57c67a9abd69182d785e9dc76f1818f4_cgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a338a44d6db1992207acf28198b5b1755_cgraph.png" border="0" usemap="#class_controller_a338a44d6db1992207acf28198b5b1755_cgraph" alt=""/></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a57c67a9abd69182d785e9dc76f1818f4_icgraph.png" border="0" usemap="#class_controller_a57c67a9abd69182d785e9dc76f1818f4_icgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a338a44d6db1992207acf28198b5b1755_icgraph.png" border="0" usemap="#class_controller_a338a44d6db1992207acf28198b5b1755_icgraph" alt=""/></div>
 </div>
 
 </div>
 </div>
-<a id="ad9161ebcd058d9cc08f5c677eb20b2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9161ebcd058d9cc08f5c677eb20b2f7">&#9670;&nbsp;</a></span>PrintRecordsNearAverageSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Controller::PrintRecordsNearAverageSpeed </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;&#160;</td>
-          <td class="paramname"><em>windData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>averageSpeed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tolerance</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_ad9161ebcd058d9cc08f5c677eb20b2f7_cgraph.png" border="0" usemap="#class_controller_ad9161ebcd058d9cc08f5c677eb20b2f7_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_ad9161ebcd058d9cc08f5c677eb20b2f7_icgraph.png" border="0" usemap="#class_controller_ad9161ebcd058d9cc08f5c677eb20b2f7_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="af706229d2722527cece3a425127e5305"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af706229d2722527cece3a425127e5305">&#9670;&nbsp;</a></span>ProcessMenuChoice()</h2>
+<a id="adbc1d9566abe866394a4c76c64fc0bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc1d9566abe866394a4c76c64fc0bad">&#9670;&nbsp;</a></span>ProcessMenuChoice()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,8 +256,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="_controller_8h.html#a2468f1ca11f953b4052170a0308ad3b3">WindLogType</a> &amp;&#160;</td>
-          <td class="paramname"><em>windRecords</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
+          <td class="paramname"><em>weatherRecords</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -316,15 +266,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_af706229d2722527cece3a425127e5305_cgraph.png" border="0" usemap="#class_controller_af706229d2722527cece3a425127e5305_cgraph" alt=""/></div>
-</div>
+
+<p>Processes the user's menu choice, prompts for necessary input, and runs the requested report. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choice</td><td>The integer choice from the menu. </td></tr>
+    <tr><td class="paramname">weatherRecords</td><td>The complete set of all loaded weather records. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_af706229d2722527cece3a425127e5305_icgraph.png" border="0" usemap="#class_controller_af706229d2722527cece3a425127e5305_icgraph" alt=""/></div>
+<div class="center"><img src="class_controller_adbc1d9566abe866394a4c76c64fc0bad_icgraph.png" border="0" usemap="#class_controller_adbc1d9566abe866394a4c76c64fc0bad_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -354,6 +308,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The string to split. </td></tr>
+    <tr><td class="paramname">delimiter</td><td>The character delimiter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a> of strings (tokens). </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -377,7 +341,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_controller.html">Controller</a></li>
-    <li class="footer">Generated on Sat Oct 11 2025 09:23:37 for Wind Speed Analysis by
+    <li class="footer">Generated on Wed Oct 15 2025 20:44:28 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['calculateaveragewindspeed_68',['CalculateAverageWindSpeed',['../class_controller.html#a4e7a61fc8128fd0f6b017ee083450ae6',1,'Controller']]],
-  ['calculatewindspeedstandarddeviation_69',['CalculateWindSpeedStandardDeviation',['../class_controller.html#a013ff2febc5d1c0d6c1413851bcbe58e',1,'Controller']]]
+  ['calculateaverage_84',['CalculateAverage',['../class_statistics.html#aed009f34526ba28d02659e71830eafde',1,'Statistics']]],
+  ['calculatestandarddeviation_85',['CalculateStandardDeviation',['../class_statistics.html#a353eea00f1515fb4c52ac72de7b50fb3',1,'Statistics']]],
+  ['calculatetotal_86',['CalculateTotal',['../class_statistics.html#a334275cd49547c1d4bd39bd15fe3be07',1,'Statistics']]]
 ];

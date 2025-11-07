@@ -4,5 +4,5 @@ digraph "Controller"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{Controller\n||+ LoadRecords()\l+ CalculateAverageWindSpeed()\l+ CalculateWindSpeedStandard\lDeviation()\l+ PrintRecordsNearAverageSpeed()\l+ DisplayMenu()\l+ ProcessMenuChoice()\l+ splitString()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Declaration of the Controller class."];
+  Node1 [label="{Controller\n||+ LoadRecords()\l+ LoadAllRecordsFromSourceFile()\l+ DisplayMenu()\l+ ProcessMenuChoice()\l+ splitString()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines the Controller class, handling I/O, menu, user input validation, data filtering,..."];
 }

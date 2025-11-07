@@ -4,6 +4,7 @@
 #include "Date.h"
 #include "Time.h"
 #include "Vector.h"
+#include "WeatherRecord.h"
 #include <string>
 
 using std::string;
@@ -22,18 +23,6 @@ const string monthNames[] =
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 };
-
-/**
- * @brief Structure to hold a single weather record entry.
- */
-typedef struct
-{
-    Date m_date = Date();
-    Time m_time = Time();
-    float m_windSpeed = 0.0;
-    float m_temperature  = 0.0;
-    float m_solarRadiation  = 0.0;
-} WeatherRecord;
 
 /**
  * @brief The primary data structure for storing all weather records.

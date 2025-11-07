@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Wind Speed Analysis: Class Members</title>
+<title>Weather Data Analysis: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Wind Speed Analysis
+   <div id="projectname">Weather Data Analysis
    &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
@@ -85,11 +85,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>CalculateAverageWindSpeed()
-: <a class="el" href="class_controller.html#a4e7a61fc8128fd0f6b017ee083450ae6">Controller</a>
+<li>CalculateAverage()
+: <a class="el" href="class_statistics.html#aed009f34526ba28d02659e71830eafde">Statistics</a>
 </li>
-<li>CalculateWindSpeedStandardDeviation()
-: <a class="el" href="class_controller.html#a013ff2febc5d1c0d6c1413851bcbe58e">Controller</a>
+<li>CalculateStandardDeviation()
+: <a class="el" href="class_statistics.html#a353eea00f1515fb4c52ac72de7b50fb3">Statistics</a>
+</li>
+<li>CalculateTotal()
+: <a class="el" href="class_statistics.html#a334275cd49547c1d4bd39bd15fe3be07">Statistics</a>
 </li>
 </ul>
 
@@ -97,6 +100,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>Date()
 : <a class="el" href="class_date.html#a4e59ed4ba66eec61c27460c5d09fa1bd">Date</a>
+</li>
+<li>Delete()
+: <a class="el" href="class_vector.html#af77df1afa4a7fee6e6a2f4524b545c38">Vector&lt; T &gt;</a>
 </li>
 <li>DisplayMenu()
 : <a class="el" href="class_controller.html#a3024b4495bba0192743de0d81cafa273">Controller</a>
@@ -133,28 +139,37 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>insert()
-: <a class="el" href="class_vector.html#ae1589654b089f7e9380366edadbf578f">Vector&lt; T &gt;</a>
+<li>Insert()
+: <a class="el" href="class_vector.html#a554169987168b63ae4e87f5de0c13561">Vector&lt; T &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
+<li>LoadAllRecordsFromSourceFile()
+: <a class="el" href="class_controller.html#a80d4dd1c0a2ed1ad007a3b6e56228d6f">Controller</a>
+</li>
 <li>LoadRecords()
-: <a class="el" href="class_controller.html#a57c67a9abd69182d785e9dc76f1818f4">Controller</a>
+: <a class="el" href="class_controller.html#a338a44d6db1992207acf28198b5b1755">Controller</a>
 </li>
 </ul>
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>m_date
-: <a class="el" href="struct_wind_rec_type.html#af5a693d359c552a1ef6d094b43307c65">WindRecType</a>
+: <a class="el" href="struct_weather_record.html#ac9eb39a0aa916cb019637da4412f7af3">WeatherRecord</a>
 </li>
-<li>m_speed
-: <a class="el" href="struct_wind_rec_type.html#afbbca29336550361c76fbfce10b9bacb">WindRecType</a>
+<li>m_solarRadiation
+: <a class="el" href="struct_weather_record.html#a00ff711ac5c9d8cad33052a3ac066435">WeatherRecord</a>
+</li>
+<li>m_temperature
+: <a class="el" href="struct_weather_record.html#a2110bba6a6eb83475964e7ee6cd02ba3">WeatherRecord</a>
 </li>
 <li>m_time
-: <a class="el" href="struct_wind_rec_type.html#a2e9b654daef708166e4089fd516cbf7a">WindRecType</a>
+: <a class="el" href="struct_weather_record.html#a1b3f3f7c0c96521464b635d1b3855127">WeatherRecord</a>
+</li>
+<li>m_windSpeed
+: <a class="el" href="struct_weather_record.html#a44a5e4139fdd777b3e119f6c64b8d98d">WeatherRecord</a>
 </li>
 </ul>
 
@@ -164,17 +179,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="class_vector.html#abfe08ddfd8ca9161c1360abbd47f47b4">Vector&lt; T &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="class_vector.html#a2054758707c08325ef160fd4dfc48ff7">Vector&lt; T &gt;</a>
+: <a class="el" href="class_vector.html#a6e704684817b72651577f2c323db9053">Vector&lt; T &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>PrintRecordsNearAverageSpeed()
-: <a class="el" href="class_controller.html#ad9161ebcd058d9cc08f5c677eb20b2f7">Controller</a>
-</li>
 <li>ProcessMenuChoice()
-: <a class="el" href="class_controller.html#af706229d2722527cece3a425127e5305">Controller</a>
+: <a class="el" href="class_controller.html#adbc1d9566abe866394a4c76c64fc0bad">Controller</a>
 </li>
 </ul>
 
@@ -228,7 +240,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Oct 11 2025 09:23:37 for Wind Speed Analysis by
+    <li class="footer">Generated on Wed Oct 15 2025 20:44:29 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

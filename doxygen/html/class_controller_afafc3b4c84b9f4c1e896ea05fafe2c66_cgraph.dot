@@ -5,7 +5,7 @@ digraph "Controller::splitString"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="Controller::splitString",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="Controller::splitString",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Splits a string by a delimiter and returns the tokens in a Vector."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Vector::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#ae1589654b089f7e9380366edadbf578f",tooltip="Inserts a value at the end of the Vector."];
+  Node2 [label="Vector::Insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a554169987168b63ae4e87f5de0c13561",tooltip="Inserts a data at the specified index."];
 }
