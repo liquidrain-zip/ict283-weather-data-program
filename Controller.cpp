@@ -231,7 +231,13 @@ int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & file
             record.SetTemperature(std::stof(tokens[tempIndex]));
 
             // Solar Radiation (SR)
-            record.SetSolarRadiation(std::stof(tokens[solarRadIndex]));
+            // Record taken 10min apart
+            double time_step = 10.0 / 60.0;
+            // Convert power (W/m2) to energy (Wh/m2) by multiplying by the time step
+            double srEnergy = std::stof(tokens[solarRadIndex]) * time_step;
+            // Convert Wh/m2 to kWh/m2
+            double srEnergyK = srEnergy / 1000.0;
+            record.SetSolarRadiation(srEnergyK);
         }
         catch (const std::invalid_argument& e)
         {
@@ -386,15 +392,7 @@ void Controller::displayMonthlyTotalSolarRadiation(int year, const WeatherRecord
             cout << "No Data" << endl;
             continue;
         }
-
-        // Record taken 10min apart
-        double time_step = 10.0 / 60.0;
-        // Calculate total in W/m2
-        double total_W_m2 = Statistics::CalculateTotal(filtered, "SR");
-        // Convert power (W/m2) to energy (Wh/m2) by multiplying by the time step
-        double total_Wh_m2 = total_W_m2 * time_step;
-        // Convert Wh/m2 to kWh/m2
-        double totalSolarRad = total_Wh_m2 / 1000.0;
+        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR");
 
         cout << fixed << setprecision(1) << totalSolarRad << " kWh/m2" << endl;
     }
@@ -430,19 +428,19 @@ void Controller::outputMonthlyWindTempSolarSummary(int year, const WeatherRecord
         double stDevSpeed = Statistics::CalculateStandardDeviation(filtered, avgSpeed, "S");
         double avgTemp = Statistics::CalculateAverage(filtered, "T");
         double stDevTemp = Statistics::CalculateStandardDeviation(filtered, avgTemp, "T");
-        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR") / 1000.0; // kWh/m2
+        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR");
 
         // Start line: Month name
         outputFile << monthNames[month] << ",";
 
         // 1. Average Wind Speed (S)
-        outputFile << fixed << setprecision(1) << avgSpeed << "(" << fixed << setprecision(1) << stDevSpeed << "),";
+        outputFile << fixed << setprecision(2) << avgSpeed << "(" << fixed << setprecision(1) << stDevSpeed << "),";
 
         // 2. Average Ambient Temperature (T)
-        outputFile << fixed << setprecision(1) << avgTemp << "(" << fixed << setprecision(1) << stDevTemp << "),";
+        outputFile << fixed << setprecision(2) << avgTemp << "(" << fixed << setprecision(1) << stDevTemp << "),";
 
         // 3. Total Solar Radiation (SR)
-        outputFile << fixed << setprecision(1) << totalSolarRad << endl;
+        outputFile << fixed << setprecision(2) << totalSolarRad << endl;
     }
 
     if (!hasAnyMonthlyData)
