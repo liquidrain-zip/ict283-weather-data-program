@@ -4,6 +4,7 @@ int main()
 {
     // 0. Data store
     Controller weatherController;
+    Menu weatherMenu;
     WeatherRecords weatherRecords;
     const string filename = "data/data_source.txt";
     int recordsCount = weatherController.LoadAllRecordsFromSourceFile(weatherRecords, filename);
@@ -22,7 +23,7 @@ int main()
     // 2. Menu
     int choice;
     do {
-        weatherController.DisplayMenu();
+        weatherMenu.DisplayMenu();
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -33,7 +34,7 @@ int main()
             continue;
         }
 
-        weatherController.ProcessMenuChoice(choice, weatherRecords);
+        weatherMenu.ProcessMenuChoice(choice, weatherRecords);
 
         cout << endl;
 
