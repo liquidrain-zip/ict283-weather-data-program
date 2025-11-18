@@ -1,6 +1,5 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,56,57"/>
 <area shape="rect" id="node2" href="$class_vector.html#ae542d4e0e22981b211a40f9a1a58b16f" title="Gets the allocated capacity of the Vector." alt="" coords="104,5,241,32"/>
 <area shape="rect" id="node3" href="$class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="113,56,233,83"/>
-<area shape="rect" id="node4" href="$class_vector.html#ae1589654b089f7e9380366edadbf578f" title="Inserts a value at the end of the Vector." alt="" coords="123,107,223,133"/>
 </map>

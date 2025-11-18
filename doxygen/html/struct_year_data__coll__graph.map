@@ -1,0 +1,5 @@
+<map id="YearData" name="YearData">
+<area shape="rect" id="node1" title="Stores all data for a single year, held within the main BST." alt="" coords="17,637,123,759"/>
+<area shape="rect" id="node2" href="$class_bst.html" title=" " alt="" coords="5,321,135,575"/>
+<area shape="rect" id="node3" href="$class_bst.html" title="A templated class implementing a Binary Search Tree (BST)." alt="" coords="14,5,126,259"/>
+</map>

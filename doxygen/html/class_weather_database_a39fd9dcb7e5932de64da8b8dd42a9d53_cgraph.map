@@ -1,0 +1,4 @@
+<map id="WeatherDatabase::GetMonthData" name="WeatherDatabase::GetMonthData">
+<area shape="rect" id="node1" title="Retrieves the map of day&#45;data for a specific month and year." alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node2" href="$class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="272,5,363,32"/>
+</map>

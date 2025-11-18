@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Weather Data Analysis
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -98,55 +98,28 @@ $(document).ready(function(){initNavTree('class_controller.html',''); initResiza
 Collaboration diagram for Controller:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller__coll__graph.png" border="0" usemap="#_controller_coll__map" alt="Collaboration graph"/></div>
+<map name="_controller_coll__map" id="_controller_coll__map">
+<area shape="rect" title="Defines the Controller class, handling I/O, menu, user input validation, data filtering,..." alt="" coords="5,5,231,112"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a338a44d6db1992207acf28198b5b1755"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a338a44d6db1992207acf28198b5b1755">LoadRecords</a> (<a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords, const string &amp;filename)</td></tr>
-<tr class="memdesc:a338a44d6db1992207acf28198b5b1755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads weather records from a specified file into the WeatherRecords container.  <a href="class_controller.html#a338a44d6db1992207acf28198b5b1755">More...</a><br /></td></tr>
-<tr class="separator:a338a44d6db1992207acf28198b5b1755"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a80d4dd1c0a2ed1ad007a3b6e56228d6f">LoadAllRecordsFromSourceFile</a> (<a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords, const string &amp;sourceFilename)</td></tr>
-<tr class="memdesc:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads records from all filenames listed in the specified source file.  <a href="class_controller.html#a80d4dd1c0a2ed1ad007a3b6e56228d6f">More...</a><br /></td></tr>
-<tr class="separator:a80d4dd1c0a2ed1ad007a3b6e56228d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3024b4495bba0192743de0d81cafa273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a3024b4495bba0192743de0d81cafa273">DisplayMenu</a> ()</td></tr>
-<tr class="memdesc:a3024b4495bba0192743de0d81cafa273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu options to the user.  <a href="class_controller.html#a3024b4495bba0192743de0d81cafa273">More...</a><br /></td></tr>
-<tr class="separator:a3024b4495bba0192743de0d81cafa273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc1d9566abe866394a4c76c64fc0bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#adbc1d9566abe866394a4c76c64fc0bad">ProcessMenuChoice</a> (int choice, const <a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;weatherRecords)</td></tr>
-<tr class="memdesc:adbc1d9566abe866394a4c76c64fc0bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the user's menu choice, prompts for necessary input, and runs the requested report.  <a href="class_controller.html#adbc1d9566abe866394a4c76c64fc0bad">More...</a><br /></td></tr>
-<tr class="separator:adbc1d9566abe866394a4c76c64fc0bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f47323efc077384b87a010390f38948"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7f47323efc077384b87a010390f38948">LoadRecords</a> (<a class="el" href="class_weather_database.html">WeatherDatabase</a> &amp;weatherRecords, const string &amp;filename)</td></tr>
+<tr class="memdesc:a7f47323efc077384b87a010390f38948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads weather records from a specified file into the <a class="el" href="class_weather_database.html" title="Encapsulates the Year-&gt;Month-&gt;Day nested data structure.">WeatherDatabase</a> container.  <a href="class_controller.html#a7f47323efc077384b87a010390f38948">More...</a><br /></td></tr>
+<tr class="separator:a7f47323efc077384b87a010390f38948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675a52927730a81ae5678e95fd46b6de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a675a52927730a81ae5678e95fd46b6de">LoadAllRecordsFromSourceFile</a> (<a class="el" href="class_weather_database.html">WeatherDatabase</a> &amp;weatherRecords, const string &amp;sourceFilename)</td></tr>
+<tr class="memdesc:a675a52927730a81ae5678e95fd46b6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads records from all filenames listed in the specified source file.  <a href="class_controller.html#a675a52927730a81ae5678e95fd46b6de">More...</a><br /></td></tr>
+<tr class="separator:a675a52927730a81ae5678e95fd46b6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66">splitString</a> (const string &amp;s, char delimiter)</td></tr>
-<tr class="memdesc:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a>.  <a href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66">More...</a><br /></td></tr>
+<tr class="memdesc:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html">Vector</a>.  <a href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66">More...</a><br /></td></tr>
 <tr class="separator:afafc3b4c84b9f4c1e896ea05fafe2c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the <a class="el" href="class_controller.html" title="Defines the Controller class, handling I/O, menu, user input validation, data filtering,...">Controller</a> class, handling I/O, menu, user input validation, data filtering, and delegating calculations to the <a class="el" href="class_statistics.html" title="Handles all statistical calculations for weather data.">Statistics</a> class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3024b4495bba0192743de0d81cafa273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3024b4495bba0192743de0d81cafa273">&#9670;&nbsp;</a></span>DisplayMenu()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Controller::DisplayMenu </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Displays the main menu options to the user. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_a3024b4495bba0192743de0d81cafa273_icgraph.png" border="0" usemap="#class_controller_a3024b4495bba0192743de0d81cafa273_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="a80d4dd1c0a2ed1ad007a3b6e56228d6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d4dd1c0a2ed1ad007a3b6e56228d6f">&#9670;&nbsp;</a></span>LoadAllRecordsFromSourceFile()</h2>
+<a id="a675a52927730a81ae5678e95fd46b6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675a52927730a81ae5678e95fd46b6de">&#9670;&nbsp;</a></span>LoadAllRecordsFromSourceFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +127,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int Controller::LoadAllRecordsFromSourceFile </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_weather_database.html">WeatherDatabase</a> &amp;&#160;</td>
           <td class="paramname"><em>weatherRecords</em>, </td>
         </tr>
         <tr>
@@ -183,18 +156,41 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_cgraph.png" border="0" usemap="#class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_cgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a675a52927730a81ae5678e95fd46b6de_cgraph.png" border="0" usemap="#class_controller_a675a52927730a81ae5678e95fd46b6de_cgraph" alt=""/></div>
+<map name="class_controller_a675a52927730a81ae5678e95fd46b6de_cgraph" id="class_controller_a675a52927730a81ae5678e95fd46b6de_cgraph">
+<area shape="rect" title="Loads records from all filenames listed in the specified source file." alt="" coords="5,251,181,293"/>
+<area shape="rect" href="class_controller.html#a7f47323efc077384b87a010390f38948" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="229,259,391,285"/>
+<area shape="rect" href="class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="735,5,855,32"/>
+<area shape="rect" href="class_weather_database.html#af67f88b3615f3e2277ba064182e70553" title="Inserts a single weather record into the nested data structure." alt="" coords="467,132,634,159"/>
+<area shape="rect" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253" title="Sets the date of the record." alt="" coords="467,183,634,209"/>
+<area shape="rect" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c" title="Sets the solar radiation." alt="" coords="439,233,663,260"/>
+<area shape="rect" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486" title="Sets the ambient temperature." alt="" coords="445,284,657,311"/>
+<area shape="rect" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e" title="Sets the time of the record." alt="" coords="467,335,635,361"/>
+<area shape="rect" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a" title="Sets the wind speed." alt="" coords="447,385,654,412"/>
+<area shape="rect" href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="479,436,622,463"/>
+<area shape="rect" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc" title="Gets the date of the record." alt="" coords="711,56,879,83"/>
+<area shape="rect" href="class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="744,107,845,133"/>
+<area shape="rect" href="class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="737,157,852,184"/>
+<area shape="rect" href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="742,208,847,235"/>
+<area shape="rect" href="class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="745,385,845,412"/>
+<area shape="rect" href="class_bst.html#a7d2d63a80c0c5cc2c27a4dc59a475bc8" title="Inserts a new element into the BST while maintaining the search tree property." alt="" coords="753,259,836,285"/>
+<area shape="rect" href="class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="749,309,840,336"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_icgraph.png" border="0" usemap="#class_controller_a80d4dd1c0a2ed1ad007a3b6e56228d6f_icgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a675a52927730a81ae5678e95fd46b6de_icgraph.png" border="0" usemap="#class_controller_a675a52927730a81ae5678e95fd46b6de_icgraph" alt=""/></div>
+<map name="class_controller_a675a52927730a81ae5678e95fd46b6de_icgraph" id="class_controller_a675a52927730a81ae5678e95fd46b6de_icgraph">
+<area shape="rect" title="Loads records from all filenames listed in the specified source file." alt="" coords="104,5,280,47"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,39"/>
+</map>
 </div>
 
 </div>
 </div>
-<a id="a338a44d6db1992207acf28198b5b1755"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a338a44d6db1992207acf28198b5b1755">&#9670;&nbsp;</a></span>LoadRecords()</h2>
+<a id="a7f47323efc077384b87a010390f38948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f47323efc077384b87a010390f38948">&#9670;&nbsp;</a></span>LoadRecords()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +198,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int Controller::LoadRecords </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_weather_database.html">WeatherDatabase</a> &amp;&#160;</td>
           <td class="paramname"><em>weatherRecords</em>, </td>
         </tr>
         <tr>
@@ -219,7 +215,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Loads weather records from a specified file into the WeatherRecords container. </p>
+<p>Loads weather records from a specified file into the <a class="el" href="class_weather_database.html" title="Encapsulates the Year-&gt;Month-&gt;Day nested data structure.">WeatherDatabase</a> container. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">weatherRecords</td><td>The container to store the loaded data. </td></tr>
@@ -231,54 +227,35 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a338a44d6db1992207acf28198b5b1755_cgraph.png" border="0" usemap="#class_controller_a338a44d6db1992207acf28198b5b1755_cgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a7f47323efc077384b87a010390f38948_cgraph.png" border="0" usemap="#class_controller_a7f47323efc077384b87a010390f38948_cgraph" alt=""/></div>
+<map name="class_controller_a7f47323efc077384b87a010390f38948_cgraph" id="class_controller_a7f47323efc077384b87a010390f38948_cgraph">
+<area shape="rect" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="5,259,167,285"/>
+<area shape="rect" href="class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="511,5,631,32"/>
+<area shape="rect" href="class_weather_database.html#af67f88b3615f3e2277ba064182e70553" title="Inserts a single weather record into the nested data structure." alt="" coords="243,132,410,159"/>
+<area shape="rect" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253" title="Sets the date of the record." alt="" coords="243,183,410,209"/>
+<area shape="rect" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c" title="Sets the solar radiation." alt="" coords="215,233,439,260"/>
+<area shape="rect" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486" title="Sets the ambient temperature." alt="" coords="221,284,433,311"/>
+<area shape="rect" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e" title="Sets the time of the record." alt="" coords="243,335,411,361"/>
+<area shape="rect" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a" title="Sets the wind speed." alt="" coords="223,385,430,412"/>
+<area shape="rect" href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="255,436,398,463"/>
+<area shape="rect" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc" title="Gets the date of the record." alt="" coords="487,56,655,83"/>
+<area shape="rect" href="class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="520,107,621,133"/>
+<area shape="rect" href="class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="513,157,628,184"/>
+<area shape="rect" href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="518,208,623,235"/>
+<area shape="rect" href="class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="521,385,621,412"/>
+<area shape="rect" href="class_bst.html#a7d2d63a80c0c5cc2c27a4dc59a475bc8" title="Inserts a new element into the BST while maintaining the search tree property." alt="" coords="529,259,612,285"/>
+<area shape="rect" href="class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="525,309,616,336"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a338a44d6db1992207acf28198b5b1755_icgraph.png" border="0" usemap="#class_controller_a338a44d6db1992207acf28198b5b1755_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="adbc1d9566abe866394a4c76c64fc0bad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbc1d9566abe866394a4c76c64fc0bad">&#9670;&nbsp;</a></span>ProcessMenuChoice()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Controller::ProcessMenuChoice </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>choice</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49">WeatherRecords</a> &amp;&#160;</td>
-          <td class="paramname"><em>weatherRecords</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Processes the user's menu choice, prompts for necessary input, and runs the requested report. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">choice</td><td>The integer choice from the menu. </td></tr>
-    <tr><td class="paramname">weatherRecords</td><td>The complete set of all loaded weather records. </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller_adbc1d9566abe866394a4c76c64fc0bad_icgraph.png" border="0" usemap="#class_controller_adbc1d9566abe866394a4c76c64fc0bad_icgraph" alt=""/></div>
+<div class="center"><img src="class_controller_a7f47323efc077384b87a010390f38948_icgraph.png" border="0" usemap="#class_controller_a7f47323efc077384b87a010390f38948_icgraph" alt=""/></div>
+<map name="class_controller_a7f47323efc077384b87a010390f38948_icgraph" id="class_controller_a7f47323efc077384b87a010390f38948_icgraph">
+<area shape="rect" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="328,13,489,39"/>
+<area shape="rect" href="class_controller.html#a675a52927730a81ae5678e95fd46b6de" title="Loads records from all filenames listed in the specified source file." alt="" coords="104,5,280,47"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,39"/>
+</map>
 </div>
 
 </div>
@@ -309,7 +286,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a>. </p>
+<p>Splits a string by a delimiter and returns the tokens in a <a class="el" href="class_vector.html">Vector</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>The string to split. </td></tr>
@@ -317,16 +294,26 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_vector.html" title="A dynamic array class (vector) template.">Vector</a> of strings (tokens). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_vector.html">Vector</a> of strings (tokens). </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_cgraph.png" border="0" usemap="#class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_cgraph" alt=""/></div>
+<map name="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_cgraph" id="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_cgraph">
+<area shape="rect" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="196,5,296,32"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_icgraph.png" border="0" usemap="#class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_icgraph" alt=""/></div>
+<map name="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_icgraph" id="class_controller_afafc3b4c84b9f4c1e896ea05fafe2c66_icgraph">
+<area shape="rect" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="537,13,680,39"/>
+<area shape="rect" href="class_controller.html#a7f47323efc077384b87a010390f38948" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="328,13,489,39"/>
+<area shape="rect" href="class_controller.html#a675a52927730a81ae5678e95fd46b6de" title="Loads records from all filenames listed in the specified source file." alt="" coords="104,5,280,47"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,39"/>
+</map>
 </div>
 
 </div>
@@ -341,7 +328,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_controller.html">Controller</a></li>
-    <li class="footer">Generated on Wed Oct 15 2025 20:44:28 for Weather Data Analysis by
+    <li class="footer">Generated on Tue Nov 18 2025 14:41:48 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_5fdelimiter_128',['TIME_DELIMITER',['../_types_8h.html#a40b7a48815f014421e995382e6974001',1,'Types.h']]]
+  ['right_229',['right',['../struct_node.html#ad7092450d89448320103cde1f72da320',1,'Node']]]
 ];

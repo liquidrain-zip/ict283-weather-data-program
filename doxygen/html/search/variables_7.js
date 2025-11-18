@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wind_5fspeed_5fcolumn_129',['WIND_SPEED_COLUMN',['../_types_8h.html#af5957a081b69efcb3ea0b1aeb45814e9',1,'Types.h']]]
+  ['solar_5frad_5fcolumn_230',['SOLAR_RAD_COLUMN',['../_types_8h.html#a7abd50ef75c433eeea0ab0bb1302f87a',1,'Types.h']]]
 ];

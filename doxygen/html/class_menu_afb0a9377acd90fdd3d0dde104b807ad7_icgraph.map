@@ -1,0 +1,4 @@
+<map id="Menu::ProcessMenuChoice" name="Menu::ProcessMenuChoice">
+<area shape="rect" id="node1" title="Processes the user&#39;s menu choice, prompts for necessary input, and runs the requested report." alt="" coords="104,5,287,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>

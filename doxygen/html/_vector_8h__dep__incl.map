@@ -1,5 +1,14 @@
 <map id="Vector.h" name="Vector.h">
-<area shape="rect" id="node1" title=" " alt="" coords="66,5,137,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node3" href="$_vector_test_8cpp.html" title=" " alt="" coords="105,80,215,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="238,5,308,32"/>
+<area shape="rect" id="node2" href="$_types_8h.html" title=" " alt="" coords="83,155,151,181"/>
+<area shape="rect" id="node9" href="$_weather_database_8h.html" title=" " alt="" coords="258,80,395,107"/>
+<area shape="rect" id="node11" href="$_statistics_8h.html" title=" " alt="" coords="176,155,264,181"/>
+<area shape="rect" id="node12" href="$_vector_test_8cpp.html" title=" " alt="" coords="419,80,530,107"/>
+<area shape="rect" id="node3" href="$_controller_8h.html" title=" " alt="" coords="89,304,177,331"/>
+<area shape="rect" id="node6" href="$_menu_8h.html" title=" " alt="" coords="202,229,267,256"/>
+<area shape="rect" id="node8" href="$_statistics_8cpp.html" title=" " alt="" coords="23,229,126,256"/>
+<area shape="rect" id="node4" href="$_controller_8cpp.html" title=" " alt="" coords="66,379,168,405"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="193,379,268,405"/>
+<area shape="rect" id="node7" href="$_menu_8cpp.html" title=" " alt="" coords="252,304,331,331"/>
+<area shape="rect" id="node10" href="$_weather_database_8cpp.html" title=" " alt="" coords="407,155,558,181"/>
 </map>

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Weather Data Analysis
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -89,23 +89,34 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_controller_8h_source.html">Controller.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_weather_database_8h_source.html">WeatherDatabase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_menu_8h_source.html">Menu.h</a>&quot;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
 <map name="main_8cpp" id="main_8cpp">
-<area shape="rect" title=" " alt="" coords="314,5,389,32"/>
-<area shape="rect" title=" " alt="" coords="107,155,179,181"/>
-<area shape="rect" title=" " alt="" coords="299,155,353,181"/>
-<area shape="rect" title=" " alt="" coords="205,155,274,181"/>
-<area shape="rect" title=" " alt="" coords="475,80,540,107"/>
-<area shape="rect" title=" " alt="" coords="565,80,623,107"/>
-<area shape="rect" title=" " alt="" coords="394,155,461,181"/>
-<area shape="rect" title=" " alt="" coords="647,80,701,107"/>
-<area shape="rect" href="_date_8h.html" title=" " alt="" coords="152,80,212,107"/>
-<area shape="rect" href="_time_8h.html" title=" " alt="" coords="287,80,349,107"/>
-<area shape="rect" href="_vector_8h.html" title=" " alt="" coords="5,80,76,107"/>
-<area shape="rect" title=" " alt="" coords="8,155,73,181"/>
+<area shape="rect" title=" " alt="" coords="619,5,693,32"/>
+<area shape="rect" href="_controller_8h.html" title=" " alt="" coords="424,80,512,107"/>
+<area shape="rect" href="_weather_database_8h.html" title=" " alt="" coords="479,304,617,331"/>
+<area shape="rect" href="_menu_8h.html" title=" " alt="" coords="479,155,545,181"/>
+<area shape="rect" title=" " alt="" coords="720,80,773,107"/>
+<area shape="rect" href="_types_8h.html" title=" " alt="" coords="407,229,475,256"/>
+<area shape="rect" title=" " alt="" coords="683,528,755,555"/>
+<area shape="rect" title=" " alt="" coords="183,528,238,555"/>
+<area shape="rect" href="_statistics_8h.html" title=" " alt="" coords="64,304,152,331"/>
+<area shape="rect" href="_date_8h.html" title=" " alt="" coords="379,453,439,480"/>
+<area shape="rect" href="_time_8h.html" title=" " alt="" coords="291,453,352,480"/>
+<area shape="rect" href="_vector_8h.html" title=" " alt="" coords="475,379,546,405"/>
+<area shape="rect" href="_weather_record_8h.html" title=" " alt="" coords="328,379,451,405"/>
+<area shape="rect" title=" " alt="" coords="375,528,444,555"/>
+<area shape="rect" title=" " alt="" coords="284,528,351,555"/>
+<area shape="rect" title=" " alt="" coords="478,453,543,480"/>
+<area shape="rect" title=" " alt="" coords="585,453,663,480"/>
+<area shape="rect" href="_bst_8h.html" title=" " alt="" coords="692,379,745,405"/>
+<area shape="rect" title=" " alt="" coords="570,379,617,405"/>
+<area shape="rect" title=" " alt="" coords="43,379,101,405"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -134,22 +145,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,360,56,387"/>
-<area shape="rect" href="main_8cpp.html#a41ff9290a9a345af10f8faa5902219ba" title=" " alt="" coords="127,208,224,235"/>
-<area shape="rect" href="class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="549,537,669,564"/>
-<area shape="rect" href="main_8cpp.html#af82cea129642c3526cbb915b605e5041" title=" " alt="" coords="126,259,225,285"/>
-<area shape="rect" href="main_8cpp.html#a31cd46abf0573b3c3401949a3bd4f0c4" title=" " alt="" coords="104,563,247,589"/>
-<area shape="rect" href="class_vector.html#ae1589654b089f7e9380366edadbf578f" title="Inserts a value at the end of the Vector." alt="" coords="559,132,659,159"/>
-<area shape="rect" href="class_date.html#a7b6f3262997530ea44b84dc1ff818690" title="Sets the day of the month range of 1&#45;31." alt="" coords="348,309,448,336"/>
-<area shape="rect" href="class_time.html#a7db605d36da2d61943c4084520425759" title="Sets the hour of the Time object." alt="" coords="345,360,451,387"/>
-<area shape="rect" href="class_time.html#a7a868f67e04befc0854a1cb99d86f802" title="Sets the minute of the Time object." alt="" coords="339,56,457,83"/>
-<area shape="rect" href="class_date.html#aa7814f6054a688039338ac1190d74a8d" title="Sets the month of the year range of 1&#45;12." alt="" coords="341,107,455,133"/>
-<area shape="rect" href="class_time.html#a89ab33e3aed09902984ad5ca5e317c6e" title="Sets the second of the Time object." alt="" coords="337,157,459,184"/>
-<area shape="rect" href="class_date.html#a795790fc0cde4220ceaf13b5ce232e4a" title="Sets the year." alt="" coords="346,208,450,235"/>
-<area shape="rect" href="main_8cpp.html#acb6ea78def8c85d625f58d3ab000c6c5" title=" " alt="" coords="358,5,438,32"/>
-<area shape="rect" href="main_8cpp.html#a7416906526757599c2c1366e825a5107" title=" " alt="" coords="303,563,493,589"/>
-<area shape="rect" href="main_8cpp.html#a35fd4943ee9d354eb012d4c79a4f9a0d" title=" " alt="" coords="301,614,495,655"/>
-<area shape="rect" href="main_8cpp.html#ab54f671d27d1e6d14dc99d2af39b9a65" title=" " alt="" coords="295,680,501,707"/>
+<area shape="rect" title=" " alt="" coords="5,259,56,285"/>
+<area shape="rect" href="class_menu.html#a22e4ab4850900622b6154123c5386d27" title="Displays the main menu options to the user." alt="" coords="127,200,264,227"/>
+<area shape="rect" href="class_controller.html#a675a52927730a81ae5678e95fd46b6de" title="Loads records from all filenames listed in the specified source file." alt="" coords="107,251,283,293"/>
+<area shape="rect" href="class_menu.html#afb0a9377acd90fdd3d0dde104b807ad7" title="Processes the user&#39;s menu choice, prompts for necessary input, and runs the requested report." alt="" coords="104,317,287,344"/>
+<area shape="rect" href="class_controller.html#a7f47323efc077384b87a010390f38948" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="335,259,496,285"/>
+<area shape="rect" href="class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="840,5,960,32"/>
+<area shape="rect" href="class_weather_database.html#af67f88b3615f3e2277ba064182e70553" title="Inserts a single weather record into the nested data structure." alt="" coords="573,132,739,159"/>
+<area shape="rect" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253" title="Sets the date of the record." alt="" coords="573,183,739,209"/>
+<area shape="rect" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c" title="Sets the solar radiation." alt="" coords="544,233,768,260"/>
+<area shape="rect" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486" title="Sets the ambient temperature." alt="" coords="550,284,762,311"/>
+<area shape="rect" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e" title="Sets the time of the record." alt="" coords="572,335,740,361"/>
+<area shape="rect" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a" title="Sets the wind speed." alt="" coords="553,385,759,412"/>
+<area shape="rect" href="class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="585,436,727,463"/>
+<area shape="rect" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc" title="Gets the date of the record." alt="" coords="816,56,984,83"/>
+<area shape="rect" href="class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="849,107,951,133"/>
+<area shape="rect" href="class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="843,157,957,184"/>
+<area shape="rect" href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="847,208,953,235"/>
+<area shape="rect" href="class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="850,385,950,412"/>
+<area shape="rect" href="class_bst.html#a7d2d63a80c0c5cc2c27a4dc59a475bc8" title="Inserts a new element into the BST while maintaining the search tree property." alt="" coords="859,259,941,285"/>
+<area shape="rect" href="class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="855,309,945,336"/>
 </map>
 </div>
 
@@ -161,7 +176,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Wed Oct 15 2025 20:44:27 for Weather Data Analysis by
+    <li class="footer">Generated on Tue Nov 18 2025 14:41:48 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

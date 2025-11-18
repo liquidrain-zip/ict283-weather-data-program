@@ -189,7 +189,7 @@
 	<string>
 	<sstream>
 
-1763447157 source:c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\main.cpp
+1763448343 source:c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\main.cpp
 	"Controller.h"
 	"WeatherDatabase.h"
 	"Menu.h"
@@ -230,16 +230,17 @@
 	"Date.h"
 	"Time.h"
 
-1763447363 source:c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\statistics.cpp
+1763447918 source:c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\statistics.cpp
 	"Statistics.h"
 	"WeatherRecord.h"
 	"Types.h"
+	<cmath>
 	<stdexcept>
 
 1763444902 source:c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\time.cpp
 	"Time.h"
 
-1763446539 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\menu.h
+1763448292 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\menu.h
 	<string>
 	<iostream>
 	"Types.h"

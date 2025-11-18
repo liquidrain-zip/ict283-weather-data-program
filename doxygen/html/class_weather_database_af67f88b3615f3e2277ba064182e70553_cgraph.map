@@ -1,0 +1,11 @@
+<map id="WeatherDatabase::Insert" name="WeatherDatabase::Insert">
+<area shape="rect" id="node1" title="Inserts a single weather record into the nested data structure." alt="" coords="5,183,172,209"/>
+<area shape="rect" id="node2" href="$class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="244,5,364,32"/>
+<area shape="rect" id="node3" href="$class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc" title="Gets the date of the record." alt="" coords="220,56,388,83"/>
+<area shape="rect" id="node4" href="$class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="253,107,355,133"/>
+<area shape="rect" id="node5" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="247,157,361,184"/>
+<area shape="rect" id="node6" href="$class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="251,208,357,235"/>
+<area shape="rect" id="node7" href="$class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="254,259,354,285"/>
+<area shape="rect" id="node8" href="$class_bst.html#a7d2d63a80c0c5cc2c27a4dc59a475bc8" title="Inserts a new element into the BST while maintaining the search tree property." alt="" coords="263,309,345,336"/>
+<area shape="rect" id="node9" href="$class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="259,360,349,387"/>
+</map>

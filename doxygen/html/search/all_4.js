@@ -1,5 +1,17 @@
 var searchData=
 [
-  ['initial_5fcapacity_24',['INITIAL_CAPACITY',['../_vector_8h.html#ac275d2be70a1ea35ee1fee1a24b1e76c',1,'Vector.h']]],
-  ['insert_25',['Insert',['../class_vector.html#a554169987168b63ae4e87f5de0c13561',1,'Vector']]]
+  ['getcapacity_28',['getCapacity',['../class_vector.html#ae542d4e0e22981b211a40f9a1a58b16f',1,'Vector']]],
+  ['getcount_29',['getCount',['../class_vector.html#a75165d58190702b6e1131dc61c1e3a45',1,'Vector']]],
+  ['getdate_30',['GetDate',['../class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc',1,'WeatherRecord']]],
+  ['getday_31',['GetDay',['../class_date.html#a6304a67f1c13b239eb8e80ad68161e40',1,'Date']]],
+  ['gethour_32',['GetHour',['../class_time.html#aaf65e0dc73514ffab9b3dd643cef9bdb',1,'Time']]],
+  ['getminute_33',['GetMinute',['../class_time.html#a86302564cc0783b402dc5f0e137a43c1',1,'Time']]],
+  ['getmonth_34',['GetMonth',['../class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7',1,'Date']]],
+  ['getmonthdata_35',['GetMonthData',['../class_weather_database.html#a39fd9dcb7e5932de64da8b8dd42a9d53',1,'WeatherDatabase']]],
+  ['getsecond_36',['GetSecond',['../class_time.html#a53582e9b9f6f0da1db2d3e9d11df04bc',1,'Time']]],
+  ['getsolarradiation_37',['GetSolarRadiation',['../class_weather_record.html#a023e9c1d9d623874de85f07af709962f',1,'WeatherRecord']]],
+  ['gettemperature_38',['GetTemperature',['../class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7',1,'WeatherRecord']]],
+  ['gettime_39',['GetTime',['../class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc',1,'WeatherRecord']]],
+  ['getwindspeed_40',['GetWindSpeed',['../class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c',1,'WeatherRecord']]],
+  ['getyear_41',['GetYear',['../class_date.html#ad79ce504482f317ddcfdc4ecad77671f',1,'Date']]]
 ];

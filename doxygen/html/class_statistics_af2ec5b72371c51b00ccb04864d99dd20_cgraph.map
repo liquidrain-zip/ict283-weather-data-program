@@ -1,0 +1,5 @@
+<map id="Statistics::CalculateAverage" name="Statistics::CalculateAverage">
+<area shape="rect" id="node1" title="Calculates the arithmetic mean (average) of a specified data type. Parameter is const Vector&lt;WeatherR..." alt="" coords="5,31,191,57"/>
+<area shape="rect" id="node2" href="$class_statistics.html#abd39e78c27ab4741f12928e8a6e7f5bc" title="Calculates the sum (total) of a specified data type. Parameter is const Vector&lt;WeatherRecord&gt;&amp;." alt="" coords="239,5,405,32"/>
+<area shape="rect" id="node3" href="$class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="453,31,573,57"/>
+</map>

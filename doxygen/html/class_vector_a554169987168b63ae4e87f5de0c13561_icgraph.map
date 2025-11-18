@@ -1,0 +1,8 @@
+<map id="Vector::Insert" name="Vector::Insert">
+<area shape="rect" id="node1" title="Inserts a data at the specified index." alt="" coords="752,31,852,57"/>
+<area shape="rect" id="node2" href="$class_weather_database.html#af67f88b3615f3e2277ba064182e70553" title="Inserts a single weather record into the nested data structure." alt="" coords="537,5,704,32"/>
+<area shape="rect" id="node6" href="$class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="549,56,692,83"/>
+<area shape="rect" id="node3" href="$class_controller.html#a7f47323efc077384b87a010390f38948" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="328,31,489,57"/>
+<area shape="rect" id="node4" href="$class_controller.html#a675a52927730a81ae5678e95fd46b6de" title="Loads records from all filenames listed in the specified source file." alt="" coords="104,23,280,65"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
+</map>

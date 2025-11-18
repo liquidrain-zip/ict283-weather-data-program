@@ -1,0 +1,3 @@
+<map id="WeatherRecord" name="WeatherRecord">
+<area shape="rect" id="node1" title="Class to hold a single weather record entry. Manages data members privately with public getters and s..." alt="" coords="5,5,152,215"/>
+</map>

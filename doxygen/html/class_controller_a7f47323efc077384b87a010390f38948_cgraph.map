@@ -1,0 +1,18 @@
+<map id="Controller::LoadRecords" name="Controller::LoadRecords">
+<area shape="rect" id="node1" title="Loads weather records from a specified file into the WeatherDatabase container." alt="" coords="5,259,167,285"/>
+<area shape="rect" id="node2" href="$class_vector.html#a75165d58190702b6e1131dc61c1e3a45" title="Gets the number of elements currently in the Vector." alt="" coords="511,5,631,32"/>
+<area shape="rect" id="node3" href="$class_weather_database.html#af67f88b3615f3e2277ba064182e70553" title="Inserts a single weather record into the nested data structure." alt="" coords="243,132,410,159"/>
+<area shape="rect" id="node11" href="$class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253" title="Sets the date of the record." alt="" coords="243,183,410,209"/>
+<area shape="rect" id="node12" href="$class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c" title="Sets the solar radiation." alt="" coords="215,233,439,260"/>
+<area shape="rect" id="node13" href="$class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486" title="Sets the ambient temperature." alt="" coords="221,284,433,311"/>
+<area shape="rect" id="node14" href="$class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e" title="Sets the time of the record." alt="" coords="243,335,411,361"/>
+<area shape="rect" id="node15" href="$class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a" title="Sets the wind speed." alt="" coords="223,385,430,412"/>
+<area shape="rect" id="node16" href="$class_controller.html#afafc3b4c84b9f4c1e896ea05fafe2c66" title="Splits a string by a delimiter and returns the tokens in a Vector." alt="" coords="255,436,398,463"/>
+<area shape="rect" id="node4" href="$class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc" title="Gets the date of the record." alt="" coords="487,56,655,83"/>
+<area shape="rect" id="node5" href="$class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Gets the day of the month." alt="" coords="520,107,621,133"/>
+<area shape="rect" id="node6" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Gets the month of the year." alt="" coords="513,157,628,184"/>
+<area shape="rect" id="node7" href="$class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Gets the year." alt="" coords="518,208,623,235"/>
+<area shape="rect" id="node8" href="$class_vector.html#a554169987168b63ae4e87f5de0c13561" title="Inserts a data at the specified index." alt="" coords="521,385,621,412"/>
+<area shape="rect" id="node9" href="$class_bst.html#a7d2d63a80c0c5cc2c27a4dc59a475bc8" title="Inserts a new element into the BST while maintaining the search tree property." alt="" coords="529,259,612,285"/>
+<area shape="rect" id="node10" href="$class_bst.html#a4334e50ea5cfbc123c51fcba868e2de4" title="Searches for a specific element in the tree." alt="" coords="525,309,616,336"/>
+</map>

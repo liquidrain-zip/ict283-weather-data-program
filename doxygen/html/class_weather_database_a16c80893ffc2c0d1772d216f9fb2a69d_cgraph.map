@@ -1,0 +1,4 @@
+<map id="WeatherDatabase::TraverseYears" name="WeatherDatabase::TraverseYears">
+<area shape="rect" id="node1" title="Traverses the Year BST, calling the visit function on each YearData. This is used for Menu Option 3 (..." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$class_bst.html#a1639fd56ee773d6bd18962c7ba5a4e8a" title="Performs an InOrder traversal, calling &#39;visit_func&#39; on each node." alt="" coords="236,13,328,39"/>
+</map>

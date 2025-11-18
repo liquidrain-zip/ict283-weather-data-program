@@ -1,7 +1,6 @@
 var _types_8h =
 [
-    [ "WeatherRecord", "struct_weather_record.html", "struct_weather_record" ],
-    [ "WeatherRecords", "_types_8h.html#afdaad66bfe3f6c699ff9672d29703b49", null ],
+    [ "WeatherRecords", "_types_8h.html#ad4e45c3cc8e9eb2ce396351301c0d229", null ],
     [ "AIR_TEMP_COLUMN", "_types_8h.html#aceb232cbfe6c4e79a509aeb5dc074356", null ],
     [ "CSV_DELIMITER", "_types_8h.html#a995cdc5459a0e516efa118aa4bdcc61d", null ],
     [ "DATE_DELIMITER", "_types_8h.html#a4570351787fa97d712f51ae71cee11e7", null ],
