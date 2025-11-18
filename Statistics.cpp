@@ -1,6 +1,7 @@
 #include "Statistics.h"
 #include "WeatherRecord.h"
 #include "Types.h"
+#include <cmath>
 #include <stdexcept>
 
 float Statistics::GetValue(const WeatherRecord& record, string dataType)
@@ -65,7 +66,7 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
         return 0.0; // No data or mismatched data
     }
 
-    // 1. Calculate means
+    // Calculate means
     double sumX = 0.0, sumY = 0.0;
     for (int i = 0; i < n; ++i) {
         sumX += dataX[i];
@@ -74,7 +75,7 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
     double meanX = sumX / n;
     double meanY = sumY / n;
 
-    // 2. Calculate numerator and denominator parts
+    // Calculate numerator and denominator parts
     double numerator = 0.0;
     double denomX = 0.0;
     double denomY = 0.0;
@@ -88,11 +89,11 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
         denomY += diffY * diffY;
     }
 
-    // 3. Calculate sPCC
+    // Calculate sPCC
     double denominator = sqrt(denomX * denomY);
 
-    if (denominator == 0) {
-        return 0.0;
+    if (std::abs(denominator) < 1e-9) {
+        return 0.0; // Avoid division by (near) zero
     }
 
     return numerator / denominator;
