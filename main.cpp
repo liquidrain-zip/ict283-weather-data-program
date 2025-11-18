@@ -1,17 +1,20 @@
 #include "Controller.h"
+#include "WeatherDatabase.h"
+#include "Menu.h"
 
 int main()
 {
     // 0. Data store
     Controller weatherController;
     Menu weatherMenu;
-    WeatherRecords weatherRecords;
+    WeatherDatabase weatherDatabase;
     const string filename = "data/data_source.txt";
-    int recordsCount = weatherController.LoadAllRecordsFromSourceFile(weatherRecords, filename);
 
     // 1. Input / Load
+    int recordsCount = weatherController.LoadAllRecordsFromSourceFile(weatherDatabase, filename);
+
     if (recordsCount > 0) {
-        cout << "Successfully loaded " << weatherRecords.getCount() << " weather records." << endl;
+        cout << "Successfully loaded " << recordsCount << " weather records." << endl;
     }
     else
     {
@@ -30,11 +33,12 @@ int main()
         if (cin.fail()) {
             cout << "Invalid input. Please enter a number from the menu.\n";
             cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             choice = 0; // returns to menu display
             continue;
         }
 
-        weatherMenu.ProcessMenuChoice(choice, weatherRecords);
+        weatherMenu.ProcessMenuChoice(choice, weatherDatabase);
 
         cout << endl;
 

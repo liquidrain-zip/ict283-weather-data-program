@@ -5,6 +5,7 @@
 #include "Time.h"
 #include "Vector.h"
 #include "WeatherRecord.h"
+#include "WeatherDatabase.h"
 #include <string>
 
 using std::string;
@@ -24,10 +25,7 @@ const string monthNames[] =
     "July", "August", "September", "October", "November", "December"
 };
 
-/**
- * @brief The primary data structure for storing all weather records.
- * Implemented as a Vector of WeatherRecord.
- */
-typedef Vector<WeatherRecord> WeatherRecords;
+typedef WeatherDatabase WeatherRecords;
+
 
 #endif // TYPES_H_INCLUDED
