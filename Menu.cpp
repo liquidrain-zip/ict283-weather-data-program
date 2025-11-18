@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
+#include <map>
 
 #include "Menu.h"
 #include "Statistics.h"
@@ -18,6 +19,72 @@ using std::abs;
 using std::stoi;
 using std::stof;
 using std::getline;
+
+static Vector<WeatherRecord> AggregateMonthRecords(const DayMap* dayMap)
+{
+    Vector<WeatherRecord> aggregatedRecords;
+    if (dayMap == nullptr) {
+        return aggregatedRecords;
+    }
+
+    for (DayMap::const_iterator it = dayMap->begin(); it != dayMap->end(); ++it)
+    {
+        const Vector<WeatherRecord>& dayVector = it->second;
+
+        for (int i = 0; i < dayVector.getCount(); ++i) {
+            aggregatedRecords.Insert(dayVector[i], aggregatedRecords.getCount());
+        }
+    }
+    return aggregatedRecords;
+}
+
+/**
+ * @brief Context struct to hold data for the sPCC collector.
+ */
+struct SPCC_Collector
+{
+    SPCC_Collector() : targetMonth(0), all_S(), all_T(), all_R() {}
+
+    int targetMonth;
+    Vector<float> all_S; // All Wind Speed data
+    Vector<float> all_T; // All Temperature data
+    Vector<float> all_R; // All Solar Radiation data
+};
+
+/**
+ * @brief The "visit" function (static) to be passed to the BST traversal.
+ *
+ * This function is called for EVERY YearData node in the main BST.
+ * It checks if that year has data for the 'targetMonth' and, if so,
+ * collects all S, T, and R values into the collector struct.
+ */
+static void sPCC_Visit_Func(YearData& yearData, void* userData)
+{
+    SPCC_Collector* collector = static_cast<SPCC_Collector*>(userData);
+
+    // 1. Search this Year's monthTree for the target month
+    MonthData searchMonth;
+    searchMonth.month = collector->targetMonth;
+    MonthData* monthNode = yearData.monthTree.Search(searchMonth);
+
+    if (monthNode != nullptr)
+    {
+        // 2. Found the month. Iterate through its DayMap.
+        for (DayMap::const_iterator it = monthNode->dayData.begin(); it != monthNode->dayData.end(); ++it)
+        {
+            const Vector<WeatherRecord>& dayVector = it->second;
+
+            // 3. Add every record's data to the collector's vectors
+            for (int i = 0; i < dayVector.getCount(); ++i)
+            {
+                const WeatherRecord& rec = dayVector[i];
+                collector->all_S.Insert(rec.GetWindSpeed(), collector->all_S.getCount());
+                collector->all_T.Insert(rec.GetTemperature(), collector->all_T.getCount());
+                collector->all_R.Insert(rec.GetSolarRadiation(), collector->all_R.getCount());
+            }
+        }
+    }
+}
 
 void Menu::DisplayMenu()
 {
@@ -68,15 +135,15 @@ void Menu::ProcessMenuChoice(int choice, const WeatherRecords& weatherRecords)
         displayMonthlyTemperatureAveragesAndStdev(year, weatherRecords);
         break;
     case 3:
-        cout << "Enter the year (e.g., 2025): ";
-        if (!(cin >> year))
+        cout << "Enter the month (1-12): ";
+        if (!(cin >> month) || month < 1 || month > 12)
         {
-            cout << "Invalid year. Returning to menu.\n";
+            cout << "Invalid month. Returning to menu.\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return;
         }
-        displayMonthlyTotalSolarRadiation(year, weatherRecords);
+        displaySPCC(month, weatherRecords);
         break;
     case 4:
         cout << "Enter the year (e.g., 2025): ";
@@ -99,34 +166,14 @@ void Menu::ProcessMenuChoice(int choice, const WeatherRecords& weatherRecords)
     }
 }
 
-WeatherRecords Menu::getRecordsForMonthAndYear(int month, int year, const WeatherRecords& weatherRecords) const
-{
-    WeatherRecords filteredRecords;
-    int insertIndex = 0;
-
-    if (month < 1 || month > 12)
-    {
-        return filteredRecords;
-    }
-
-    for (int i = 0; i < weatherRecords.getCount(); ++i)
-    {
-        const WeatherRecord& record = weatherRecords[i];
-        const Date& recordDate = record.GetDate();
-        if (recordDate.GetMonth() == month && recordDate.GetYear() == year)
-        {
-            filteredRecords.Insert(record, insertIndex);
-            insertIndex++;
-        }
-    }
-
-    return filteredRecords;
-}
-
 // Menu Option 1
 void Menu::displayAverageWindSpeedAndStdev(int month, int year, const WeatherRecords& weatherRecords) const
 {
-    WeatherRecords filtered = getRecordsForMonthAndYear(month, year, weatherRecords);
+    // Query the database
+    const DayMap* monthData = weatherRecords.GetMonthData(year, month);
+
+    // Aggregate all records for that month
+    Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
 
     cout << monthNames[month] << " " << year << ": ";
 
@@ -136,11 +183,12 @@ void Menu::displayAverageWindSpeedAndStdev(int month, int year, const WeatherRec
         return;
     }
 
+    // Calculate stats
     double avgSpeed = Statistics::CalculateAverage(filtered, "S");
     double stDevSpeed = Statistics::CalculateStandardDeviation(filtered, avgSpeed, "S");
 
-    cout << "Average speed: " << fixed << setprecision(1) << avgSpeed << " km/h ";
-    cout << "Sample stdev: " << fixed << setprecision(1) << stDevSpeed << endl;
+    cout << "Average speed: " << fixed << setprecision(2) << avgSpeed << " km/h ";
+    cout << "Sample stdev: " << fixed << setprecision(2) << stDevSpeed << endl;
 }
 
 // Menu Option 2
@@ -150,7 +198,11 @@ void Menu::displayMonthlyTemperatureAveragesAndStdev(int year, const WeatherReco
 
     for (int month = 1; month <= 12; ++month)
     {
-        WeatherRecords filtered = getRecordsForMonthAndYear(month, year, weatherRecords);
+        // Query DB for this month (FAST)
+        const DayMap* monthData = weatherRecords.GetMonthData(year, month);
+
+        // Aggregate
+        Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
 
         cout << monthNames[month] << ": ";
 
@@ -160,35 +212,49 @@ void Menu::displayMonthlyTemperatureAveragesAndStdev(int year, const WeatherReco
             continue;
         }
 
+        // Calculate stats
         double avgTemp = Statistics::CalculateAverage(filtered, "T");
         double stDevTemp = Statistics::CalculateStandardDeviation(filtered, avgTemp, "T");
 
         cout << "average: "
-             << fixed << setprecision(1) << avgTemp << " degrees C, "
-             << "stdev: " << fixed << setprecision(1) << stDevTemp << endl;
+             << fixed << setprecision(2) << avgTemp << " degrees C, "
+             << "stdev: " << fixed << setprecision(2) << stDevTemp << endl;
     }
 }
 
+// ---
 // Menu Option 3
-void Menu::displayMonthlyTotalSolarRadiation(int year, const WeatherRecords& weatherRecords) const
+// ---
+void Menu::displaySPCC(int month, const WeatherRecords& weatherRecords) const
 {
-    cout << year << endl;
+    // Create the collector
+    SPCC_Collector collector;
+    collector.targetMonth = month;
 
-    for (int month = 1; month <= 12; ++month)
+    // Run the traversal
+    // I cast away 'const' here to call TraverseYears, which calls a
+    // non-const BST InOrder. This is a design trade-off.
+    // A better way would be to have const- and non-const traversals.
+    // For this assignment, this cast is the simplest solution.
+    WeatherDatabase& nonConstDB = const_cast<WeatherDatabase&>(weatherRecords);
+    nonConstDB.TraverseYears(sPCC_Visit_Func, &collector);
+
+    cout << "\nSample Pearson Correlation Coefficient for " << monthNames[month] << endl;
+
+    if (collector.all_S.getCount() < 2)
     {
-        WeatherRecords filtered = getRecordsForMonthAndYear(month, year, weatherRecords);
-
-        cout << monthNames[month] << ": ";
-
-        if (filtered.getCount() == 0)
-        {
-            cout << "No Data" << endl;
-            continue;
-        }
-        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR");
-
-        cout << fixed << setprecision(1) << totalSolarRad << " kWh/m2" << endl;
+        cout << "Not enough data to calculate sPCC for " << monthNames[month] << "." << endl;
+        return;
     }
+
+    // Calculate and display results
+    double s_t = Statistics::CalculateSPCC(collector.all_S, collector.all_T);
+    double s_r = Statistics::CalculateSPCC(collector.all_S, collector.all_R);
+    double t_r = Statistics::CalculateSPCC(collector.all_T, collector.all_R);
+
+    cout << "S_T: " << fixed << setprecision(2) << s_t << endl;
+    cout << "S_R: " << fixed << setprecision(2) << s_r << endl;
+    cout << "T_R: " << fixed << setprecision(2) << t_r << endl;
 }
 
 // Menu Option 4 (Output to File)
@@ -206,12 +272,16 @@ void Menu::outputMonthlyWindTempSolarSummary(int year, const WeatherRecords& wea
 
     for (int month = 1; month <= 12; ++month)
     {
-        WeatherRecords filtered = getRecordsForMonthAndYear(month, year, weatherRecords);
+        // Query DB
+        const DayMap* monthData = weatherRecords.GetMonthData(year, month);
+
+        // Aggregate
+        Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
         int count = filtered.getCount();
 
         if (count == 0)
         {
-            continue; // Skip outputting month if no data
+            continue;
         }
 
         hasAnyMonthlyData = true;

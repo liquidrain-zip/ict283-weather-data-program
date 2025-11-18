@@ -14,6 +14,8 @@ using DayMap = std::map<int, Vector<WeatherRecord>>;
  */
 struct MonthData
 {
+    MonthData() : month(0), dayData() {}
+
     int month = 0;
     DayMap dayData; // Map of <Day_Number, Vector_Of_Records_For_That_Day>
 
@@ -29,6 +31,8 @@ struct MonthData
  */
 struct YearData
 {
+    YearData() : year(0), monthTree() {}
+
     int year = 0;
     Bst<MonthData> monthTree; // A BST of all months for this year
 
@@ -48,7 +52,7 @@ struct YearData
 class WeatherDatabase
 {
 public:
-    WeatherDatabase() = default;
+    WeatherDatabase() : m_yearTree() {}
     ~WeatherDatabase() = default;
 
     /**
@@ -74,7 +78,7 @@ public:
     void TraverseYears(visit_t<YearData> visit_func, void* userData);
 
 private:
-    Bst<YearData> m_yearTree; // The root of our data structure
+    Bst<YearData> m_yearTree;
 };
 
 #endif // WEATHERDATABASE_H_INCLUDED

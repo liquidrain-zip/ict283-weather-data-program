@@ -1,7 +1,9 @@
 #ifndef STATISTICS_H_INCLUDED
 #define STATISTICS_H_INCLUDED
 
-#include "Types.h"
+#include "Vector.h"
+#include "WeatherRecord.h"
+#include <string>
 #include <cmath>
 
 /**
@@ -15,32 +17,29 @@ class Statistics
 public:
     /**
      * @brief Calculates the sum (total) of a specified data type.
-     * * @param weatherData The Vector containing the weather records.
-     * @param dataType A string code specifying the data type.
-     * @return The total sum of the values.
+     * Parameter is const Vector<WeatherRecord>&
      */
-    static double CalculateTotal(const WeatherRecords& weatherData, string dataType);
+    static double CalculateTotal(const Vector<WeatherRecord>& weatherData, string dataType);
 
     /**
      * @brief Calculates the arithmetic mean (average) of a specified data type.
-     * * @param weatherData The Vector containing the weather records.
-     * @param dataType A string code specifying the data type.
-     * @return The average value.
+     * Parameter is const Vector<WeatherRecord>&
      */
-    static double CalculateAverage(const WeatherRecords& weatherData, string dataType);
+    static double CalculateAverage(const Vector<WeatherRecord>& weatherData, string dataType);
 
     /**
      * @brief Calculates the sample standard deviation of a specified data type.
-     * * @param weatherData The Vector containing the weather records.
-     * @param averageValue The pre-calculated average value of the data type.
-     * @param dataType A string code specifying the data type.
-     * @return The sample standard deviation.
+     * Parameter is const Vector<WeatherRecord>&
      */
     static double CalculateStandardDeviation(
-        const WeatherRecords& weatherData,
+        const Vector<WeatherRecord>& weatherData,
         double averageValue,
         string dataType
     );
+    /**
+     * @brief Calculates the sample Pearson Correlation Coefficient.
+     */
+    static double CalculateSPCC(const Vector<float>& dataX, const Vector<float>& dataY);
 
 private:
     /**
