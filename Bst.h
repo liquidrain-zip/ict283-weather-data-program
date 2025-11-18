@@ -7,17 +7,16 @@ using std::cout;
 using std::endl;
 using std::runtime_error;
 
-// ---
-// FORWARD DECLARATION of the Node struct
-// ---
+/**
+ * @brief Forward declaration of the Node struct
+ */
 template <class T>
 struct Node;
 
-// ---
-// FUNCTION POINTER TYPE DEFINITION
-//    C-style "visit" function pointer.
-//    It takes a reference to the data and a 'void*' for user-defined context.
-// ---
+/**
+ * @brief Function pointer type definition
+ * C-style "visit" function pointer. It takes a reference to the data and a 'void*' for user-defined context.
+ */
 template <class T>
 using visit_t = void (*)(T& item, void* userData);
 
@@ -119,12 +118,6 @@ public:
      * @param data The element to be inserted.
      */
     void Insert(const T & data);
-
-    // ---
-    // 4. NEW & MODIFIED SEARCH ROUTINES
-    //    We need a search that returns a *pointer* to the data,
-    //    so we can modify it (e.g., add a month to a year's monthTree).
-    // ---
 
     /**
      * @brief Searches for a specific element in the tree.

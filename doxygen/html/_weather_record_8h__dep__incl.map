@@ -1,13 +1,13 @@
 <map id="WeatherRecord.h" name="WeatherRecord.h">
-<area shape="rect" id="node1" title=" " alt="" coords="104,5,227,32"/>
-<area shape="rect" id="node2" href="$_types_8h.html" title=" " alt="" coords="173,155,241,181"/>
-<area shape="rect" id="node8" href="$_statistics_8cpp.html" title=" " alt="" coords="86,229,189,256"/>
-<area shape="rect" id="node9" href="$_weather_database_8h.html" title=" " alt="" coords="258,80,395,107"/>
-<area shape="rect" id="node11" href="$_statistics_8h.html" title=" " alt="" coords="5,155,93,181"/>
-<area shape="rect" id="node3" href="$_controller_8h.html" title=" " alt="" coords="201,304,289,331"/>
-<area shape="rect" id="node6" href="$_menu_8h.html" title=" " alt="" coords="213,229,278,256"/>
-<area shape="rect" id="node4" href="$_controller_8cpp.html" title=" " alt="" coords="186,379,289,405"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="313,379,388,405"/>
-<area shape="rect" id="node7" href="$_menu_8cpp.html" title=" " alt="" coords="29,304,107,331"/>
-<area shape="rect" id="node10" href="$_weather_database_8cpp.html" title=" " alt="" coords="265,155,415,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="167,5,290,32"/>
+<area shape="rect" id="node2" href="$_types_8h.html" title=" " alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node8" href="$_statistics_8cpp.html" title=" " alt="" coords="197,229,300,256"/>
+<area shape="rect" id="node9" href="$_weather_database_8h.html" title=" " alt="" coords="104,80,241,107"/>
+<area shape="rect" id="node11" href="$_statistics_8h.html" title=" " alt="" coords="323,155,411,181"/>
+<area shape="rect" id="node3" href="$_controller_8h.html" title=" " alt="" coords="107,304,195,331"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="17,379,91,405"/>
+<area shape="rect" id="node6" href="$_menu_8h.html" title=" " alt="" coords="108,229,173,256"/>
+<area shape="rect" id="node4" href="$_controller_8cpp.html" title=" " alt="" coords="116,379,219,405"/>
+<area shape="rect" id="node7" href="$_menu_8cpp.html" title=" " alt="" coords="284,304,363,331"/>
+<area shape="rect" id="node10" href="$_weather_database_8cpp.html" title=" " alt="" coords="97,155,248,181"/>
 </map>

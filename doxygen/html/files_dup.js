@@ -10,7 +10,9 @@ var files_dup =
     [ "DateTest.cpp", "_date_test_8cpp.html", "_date_test_8cpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "Menu.cpp", "_menu_8cpp.html", "_menu_8cpp" ],
-    [ "Menu.h", "_menu_8h.html", "_menu_8h" ],
+    [ "Menu.h", "_menu_8h.html", [
+      [ "Menu", "class_menu.html", "class_menu" ]
+    ] ],
     [ "Statistics.cpp", "_statistics_8cpp.html", null ],
     [ "Statistics.h", "_statistics_8h.html", [
       [ "Statistics", "class_statistics.html", null ]

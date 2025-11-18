@@ -1,5 +1,5 @@
 #include "Controller.h"
-#include "WeatherDatabase.h"
+#include "Types.h"
 #include "Menu.h"
 #include <limits>
 

@@ -108,14 +108,21 @@ $(document).ready(function(){initNavTree('_statistics_8h_source.html',''); initR
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    );</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="class_statistics.html#a6c677aecd1ce3b707efa95b19c042b3a">CalculateSPCC</a>(<span class="keyword">const</span> <a class="code" href="class_vector.html">Vector&lt;float&gt;</a>&amp; dataX, <span class="keyword">const</span> <a class="code" href="class_vector.html">Vector&lt;float&gt;</a>&amp; dataY);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> GetValue(<span class="keyword">const</span> <a class="code" href="class_weather_record.html">WeatherRecord</a>&amp; record, <span class="keywordtype">string</span> dataType);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif // STATISTICS_H_INCLUDED</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="class_statistics.html#a7e3f7fd3f3ed8119572749c382b9276b">CalculateMAD</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <a class="code" href="class_vector.html">Vector&lt;WeatherRecord&gt;</a>&amp; weatherData,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">double</span> averageValue,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">string</span> dataType</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> GetValue(<span class="keyword">const</span> <a class="code" href="class_weather_record.html">WeatherRecord</a>&amp; record, <span class="keywordtype">string</span> dataType);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // STATISTICS_H_INCLUDED</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_weather_record_html_a010224ea85b7e69f94f19e9ac0b9bd9c"><div class="ttname"><a href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">WeatherRecord::GetWindSpeed</a></div><div class="ttdeci">float GetWindSpeed() const</div><div class="ttdoc">Gets the wind speed.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:30</div></div>
+<div class="ttc" id="aclass_statistics_html_a7e3f7fd3f3ed8119572749c382b9276b"><div class="ttname"><a href="class_statistics.html#a7e3f7fd3f3ed8119572749c382b9276b">Statistics::CalculateMAD</a></div><div class="ttdeci">static double CalculateMAD(const Vector&lt; WeatherRecord &gt; &amp;weatherData, double averageValue, string dataType)</div><div class="ttdoc">Calculates the Mean Absolute Deviation (MAD) of a specified data type.</div><div class="ttdef"><b>Definition:</b> Statistics.cpp:102</div></div>
 <div class="ttc" id="a_types_8h_html_a7abd50ef75c433eeea0ab0bb1302f87a"><div class="ttname"><a href="_types_8h.html#a7abd50ef75c433eeea0ab0bb1302f87a">SOLAR_RAD_COLUMN</a></div><div class="ttdeci">const string SOLAR_RAD_COLUMN</div><div class="ttdef"><b>Definition:</b> Types.h:19</div></div>
 <div class="ttc" id="aclass_weather_record_html_a2a4190e5846de5552ecc4add0598d5d7"><div class="ttname"><a href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">WeatherRecord::GetTemperature</a></div><div class="ttdeci">float GetTemperature() const</div><div class="ttdoc">Gets the ambient temperature.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:36</div></div>
 <div class="ttc" id="aclass_vector_html_a75165d58190702b6e1131dc61c1e3a45"><div class="ttname"><a href="class_vector.html#a75165d58190702b6e1131dc61c1e3a45">Vector::getCount</a></div><div class="ttdeci">int getCount() const</div><div class="ttdoc">Gets the number of elements currently in the Vector.</div><div class="ttdef"><b>Definition:</b> Vector.h:223</div></div>
@@ -137,7 +144,7 @@ $(document).ready(function(){initNavTree('_statistics_8h_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_statistics_8h.html">Statistics.h</a></li>
-    <li class="footer">Generated on Tue Nov 18 2025 14:41:48 for Weather Data Analysis by
+    <li class="footer">Generated on Tue Nov 18 2025 15:14:02 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
