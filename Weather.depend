@@ -199,11 +199,12 @@
 	<string>
 	<iostream>
 
-1763444902 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\types.h
+1763446091 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\types.h
 	"Date.h"
 	"Time.h"
 	"Vector.h"
 	"WeatherRecord.h"
+	"WeatherDatabase.h"
 	<string>
 
 1763444902 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\time.h
@@ -256,4 +257,14 @@
 	<algorithm>
 	"Menu.h"
 	"Statistics.h"
+
+1763445989 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\weatherdatabase.h
+	"Bst.h"
+	"WeatherRecord.h"
+	"Vector.h"
+	<map>
+
+1763445858 c:\users\shabi\documents\school\current modules\ict 283 c\a2\weather\bst.h
+	<stdexcept>
+	<iostream>
 

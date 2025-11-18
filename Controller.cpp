@@ -30,7 +30,7 @@ Vector<string> Controller::splitString(const string& s, char delimiter)
     return tokens;
 }
 
-int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & filename)
+int Controller::LoadRecords(WeatherDatabase& weatherRecords, const string & filename)
 {
     int recordsLoaded = 0;
     ifstream inFile(filename);
@@ -171,7 +171,7 @@ int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & file
         }
 
         // --- C. Store Record ---
-        weatherRecords.Insert(record, recordsLoaded);
+        weatherRecords.Insert(record);
         recordsLoaded++;
     }
 
@@ -179,7 +179,7 @@ int Controller::LoadRecords(WeatherRecords & weatherRecords, const string & file
     return recordsLoaded;
 }
 
-int Controller::LoadAllRecordsFromSourceFile(WeatherRecords& weatherRecords, const string& sourceFilename)
+int Controller::LoadAllRecordsFromSourceFile(WeatherDatabase& weatherRecords, const string& sourceFilename)
 {
     ifstream sourceFile(sourceFilename);
     if (!sourceFile.is_open())
