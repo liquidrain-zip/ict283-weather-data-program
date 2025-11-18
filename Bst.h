@@ -7,6 +7,21 @@ using std::cout;
 using std::endl;
 using std::runtime_error;
 
+// ---
+// FORWARD DECLARATION of the Node struct
+// ---
+template <class T>
+struct Node;
+
+// ---
+// FUNCTION POINTER TYPE DEFINITION
+//    C-style "visit" function pointer.
+//    It takes a reference to the data and a 'void*' for user-defined context.
+// ---
+template <class T>
+using visit_t = void (*)(T& item, void* userData);
+
+
 /**
  * @brief Represents a node in the Binary Search Tree.
  * @tparam T The data type stored in the node.
@@ -73,23 +88,31 @@ public:
      */
     void DestroyTree();
 
-    /**
-     * @brief Performs an InOrder traversal of the tree.
-     * Prints the elements in ascending order (Left -> Root -> Right).
-     */
-    void InOrder();
+    // ---
+    // MODIFIED TRAVERSAL ROUTINES
+    //    Takes a function pointer and user data.
+    // ---
 
     /**
-     * @brief Performs a PreOrder traversal of the tree.
-     * Prints the elements in Root -> Left -> Right order.
+     * @brief Performs an InOrder traversal, calling 'visit_func' on each node.
+     * @param visit_func The function pointer to call for each item.
+     * @param userData A void pointer to pass 'context' (e.g., a collector object).
      */
-    void PreOrder();
+    void InOrder(visit_t<T> visit_func, void* userData);
 
     /**
-     * @brief Performs a PostOrder traversal of the tree.
-     * Prints the elements in Left -> Right -> Root order.
+     * @brief Performs a PreOrder traversal, calling 'visit_func' on each node.
+     * @param visit_func The function pointer to call for each item.
+     * @param userData A void pointer to pass 'context' (e.g., a collector object).
      */
-    void PostOrder();
+    void PreOrder(visit_t<T> visit_func, void* userData);
+
+    /**
+     * @brief Performs a PostOrder traversal, calling 'visit_func' on each node.
+     * @param visit_func The function pointer to call for each item.
+     * @param userData A void pointer to pass 'context' (e.g., a collector object).
+     */
+    void PostOrder(visit_t<T> visit_func, void* userData);
 
     /**
      * @brief Inserts a new element into the BST while maintaining the search tree property.
@@ -97,12 +120,26 @@ public:
      */
     void Insert(const T & data);
 
+    // ---
+    // 4. NEW & MODIFIED SEARCH ROUTINES
+    //    We need a search that returns a *pointer* to the data,
+    //    so we can modify it (e.g., add a month to a year's monthTree).
+    // ---
+
     /**
      * @brief Searches for a specific element in the tree.
-     * @param data The element to search for.
-     * @return true if the element is found, false otherwise.
+     * @param data The element to search for (used for comparison).
+     * @return A non-const pointer to the data in the tree, or nullptr if not found.
      */
-    bool Search(const T& data);
+    T* Search(const T& data);
+
+    /**
+     * @brief Searches for a specific element in the tree (const-safe version).
+     * @param data The element to search for (used for comparison).
+     * @return A const pointer to the data in the tree, or nullptr if not found.
+     */
+    const T* Search(const T& data) const;
+
 
     /**
      * @brief Deletes a node containing the specified target data.
@@ -121,20 +158,21 @@ private:
     /// @brief Recursive helper function to deallocate all nodes in the tree (post-order traversal).
     void destroy(Node<T>* &p);
 
-    /// @brief Recursive helper function for InOrder traversal.
-    void inorder(Node<T> *p) const;
-
-    /// @brief Recursive helper function for PreOrder traversal.
-    void preorder(Node<T> *p) const;
-
-    /// @brief Recursive helper function for PostOrder traversal.
-    void postorder(Node<T> *p) const;
+    // ---
+    // PRIVATE TRAVERSAL HELPERS
+    // ---
+    void inorder(Node<T> *p, visit_t<T> visit_func, void* userData);
+    void preorder(Node<T> *p, visit_t<T> visit_func, void* userData);
+    void postorder(Node<T> *p, visit_t<T> visit_func, void* userData);
 
     /// @brief Recursive helper function for inserting a node.
     void insert(Node<T>* &p, const T& data);
 
-    /// @brief Recursive helper function for searching for data.
-    bool search(Node<T> *p, const T& data) const;
+    // ---
+    // PRIVATE SEARCH HELPERS
+    // ---
+    T* search(Node<T> *p, const T& data);
+    const T* search(Node<T> *p, const T& data) const;
 
     /// @brief Recursive helper function for deleting a node.
     void deleteNode(Node<T>* &p, const T& deleteTarget);
@@ -180,7 +218,7 @@ void Bst<T>::destroy(Node<T>* &p)
     }
 }
 
-// --- Copy Operations (Rule of Three) ---
+// --- Copy Operations ---
 
 // Private Recursive Helper to perform deep copy
 template <class T>
@@ -246,23 +284,22 @@ void Bst<T>::insert(Node<T>* &p, const T& data)
     }
 }
 
-// --- Search ---
 template <class T>
-bool Bst<T>::Search(const T& data)
+T* Bst<T>::Search(const T& data)
 {
     return search(m_root, data);
 }
 
 template <class T>
-bool Bst<T>::search(Node<T> *p, const T& data) const
+T* Bst<T>::search(Node<T> *p, const T& data)
 {
     if (p == nullptr)
     {
-        return false;
+        return nullptr;
     }
     else if (data == p->info)
     {
-        return true;
+        return &(p->info); // Return ADDRESS of data
     }
     else if (data < p->info)
     {
@@ -274,58 +311,81 @@ bool Bst<T>::search(Node<T> *p, const T& data) const
     }
 }
 
-// --- Traversal ---
 template <class T>
-void Bst<T>::InOrder()
+const T* Bst<T>::Search(const T& data) const
 {
-    inorder(m_root);
-    cout << endl;
+    return search(m_root, data);
 }
 
 template <class T>
-void Bst<T>::inorder(Node<T> *p) const
+const T* Bst<T>::search(Node<T> *p, const T& data) const
 {
-    if (p != nullptr)
+    if (p == nullptr)
     {
-        inorder(p->left);
-        cout << p->info << " ";
-        inorder(p->right);
+        return nullptr;
+    }
+    else if (data == p->info)
+    {
+        return &(p->info); // Return CONST ADDRESS of data
+    }
+    else if (data < p->info)
+    {
+        return search(p->left, data);
+    }
+    else
+    {
+        return search(p->right, data);
     }
 }
 
 template <class T>
-void Bst<T>::PreOrder()
+void Bst<T>::InOrder(visit_t<T> visit_func, void* userData)
 {
-    preorder(m_root);
-    cout << endl;
+    inorder(m_root, visit_func, userData);
 }
 
 template <class T>
-void Bst<T>::preorder(Node<T> *p) const
+void Bst<T>::inorder(Node<T> *p, visit_t<T> visit_func, void* userData)
 {
     if (p != nullptr)
     {
-        cout << p->info << " ";
-        preorder(p->left);
-        preorder(p->right);
+        inorder(p->left, visit_func, userData);
+        visit_func(p->info, userData); // Call the "visit" function
+        inorder(p->right, visit_func, userData);
     }
 }
 
 template <class T>
-void Bst<T>::PostOrder()
+void Bst<T>::PreOrder(visit_t<T> visit_func, void* userData)
 {
-    postorder(m_root);
-    cout << endl;
+    preorder(m_root, visit_func, userData);
 }
 
 template <class T>
-void Bst<T>::postorder(Node<T> *p) const
+void Bst<T>::preorder(Node<T> *p, visit_t<T> visit_func, void* userData)
 {
     if (p != nullptr)
     {
-        postorder(p->left);
-        postorder(p->right);
-        cout << p->info << " ";
+        visit_func(p->info, userData); // Call the "visit" function
+        preorder(p->left, visit_func, userData);
+        preorder(p->right, visit_func, userData);
+    }
+}
+
+template <class T>
+void Bst<T>::PostOrder(visit_t<T> visit_func, void* userData)
+{
+    postorder(m_root, visit_func, userData);
+}
+
+template <class T>
+void Bst<T>::postorder(Node<T> *p, visit_t<T> visit_func, void* userData)
+{
+    if (p != nullptr)
+    {
+        postorder(p->left, visit_func, userData);
+        postorder(p->right, visit_func, userData);
+        visit_func(p->info, userData); // Call the "visit" function
     }
 }
 
