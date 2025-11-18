@@ -41,6 +41,20 @@ public:
      */
     static double CalculateSPCC(const Vector<float>& dataX, const Vector<float>& dataY);
 
+    /**
+     * @brief Calculates the Mean Absolute Deviation (MAD) of a specified data type.
+     *
+     * @param weatherData The Vector containing the weather records.
+     * @param averageValue The pre-calculated average value of the data type.
+     * @param dataType A string code specifying the data type.
+     * @return The Mean Absolute Deviation.
+     */
+    static double CalculateMAD(
+        const Vector<WeatherRecord>& weatherData,
+        double averageValue,
+        string dataType
+    );
+
 private:
     /**
      * @brief Helper function to get the value of the specified data type from a single record.

@@ -268,42 +268,49 @@ void Menu::outputMonthlyWindTempSolarSummary(int year, const WeatherRecords& wea
     }
 
     outputFile << year << endl;
+
     bool hasAnyMonthlyData = false;
 
     for (int month = 1; month <= 12; ++month)
     {
-        // Query DB
         const DayMap* monthData = weatherRecords.GetMonthData(year, month);
-
-        // Aggregate
         Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
         int count = filtered.getCount();
 
         if (count == 0)
         {
-            continue;
+            continue; // Skip outputting month if no data
         }
 
         hasAnyMonthlyData = true;
 
-        // Calculate all values
-        double avgSpeed = Statistics::CalculateAverage(filtered, "S");
-        double stDevSpeed = Statistics::CalculateStandardDeviation(filtered, avgSpeed, "S");
-        double avgTemp = Statistics::CalculateAverage(filtered, "T");
-        double stDevTemp = Statistics::CalculateStandardDeviation(filtered, avgTemp, "T");
-        double totalSolarRad = Statistics::CalculateTotal(filtered, "SR");
+        // 1. Wind Speed (S)
+        double avgSpeed = Statistics::CalculateAverage(filtered, WIND_SPEED_COLUMN);
+        double stDevSpeed = Statistics::CalculateStandardDeviation(filtered, avgSpeed, WIND_SPEED_COLUMN);
+        double madSpeed = Statistics::CalculateMAD(filtered, avgSpeed, WIND_SPEED_COLUMN);
 
-        // Start line: Month name
+        // 2. Ambient Temperature (T)
+        double avgTemp = Statistics::CalculateAverage(filtered, AIR_TEMP_COLUMN);
+        double stDevTemp = Statistics::CalculateStandardDeviation(filtered, avgTemp, AIR_TEMP_COLUMN);
+        double madTemp = Statistics::CalculateMAD(filtered, avgTemp, AIR_TEMP_COLUMN);
+
+        // 3. Total Solar Radiation (SR)
+        double totalSolarRad = Statistics::CalculateTotal(filtered, SOLAR_RAD_COLUMN);
+
         outputFile << monthNames[month] << ",";
 
         // 1. Average Wind Speed (S)
-        outputFile << fixed << setprecision(2) << avgSpeed << "(" << fixed << setprecision(1) << stDevSpeed << "),";
+        outputFile << fixed << setprecision(1) << avgSpeed
+                   << "(" << fixed << setprecision(1) << stDevSpeed
+                   << ", " << fixed << setprecision(1) << madSpeed << "),";
 
         // 2. Average Ambient Temperature (T)
-        outputFile << fixed << setprecision(2) << avgTemp << "(" << fixed << setprecision(1) << stDevTemp << "),";
+        outputFile << fixed << setprecision(1) << avgTemp
+                   << "(" << fixed << setprecision(1) << stDevTemp
+                   << ", " << fixed << setprecision(1) << madTemp << "),";
 
         // 3. Total Solar Radiation (SR)
-        outputFile << fixed << setprecision(2) << totalSolarRad << endl;
+        outputFile << fixed << setprecision(1) << totalSolarRad << endl;
     }
 
     if (!hasAnyMonthlyData)

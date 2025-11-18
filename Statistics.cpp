@@ -98,3 +98,23 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
 
     return numerator / denominator;
 }
+
+double Statistics::CalculateMAD(
+    const Vector<WeatherRecord>& weatherRecords,
+    double averageValue,
+    string dataType)
+{
+    int count = weatherRecords.getCount();
+    if (count == 0) {
+        return 0.0;
+    }
+
+    double sumAbsoluteDifferences = 0.0;
+    for (int i = 0; i < count; ++i) {
+        double value = GetValue(weatherRecords[i], dataType);
+        sumAbsoluteDifferences += std::abs(value - averageValue);
+    }
+
+    // MAD is the average of the absolute differences
+    return sumAbsoluteDifferences / count;
+}
