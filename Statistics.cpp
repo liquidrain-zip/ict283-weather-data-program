@@ -6,11 +6,16 @@
 
 float Statistics::GetValue(const WeatherRecord& record, string dataType)
 {
-    if (dataType == WIND_SPEED_COLUMN) {
+    if (dataType == WIND_SPEED_COLUMN)
+    {
         return record.GetWindSpeed();
-    } else if (dataType == AIR_TEMP_COLUMN) {
+    }
+    else if (dataType == AIR_TEMP_COLUMN)
+    {
         return record.GetTemperature();
-    } else if (dataType == SOLAR_RAD_COLUMN) {
+    }
+    else if (dataType == SOLAR_RAD_COLUMN)
+    {
         return record.GetSolarRadiation();
     }
     return 0.0f;
@@ -18,12 +23,14 @@ float Statistics::GetValue(const WeatherRecord& record, string dataType)
 
 double Statistics::CalculateTotal(const Vector<WeatherRecord>& weatherRecords, string dataType)
 {
-    if (weatherRecords.getCount() == 0) {
+    if (weatherRecords.getCount() == 0)
+    {
         return 0.0;
     }
 
     double sum = 0.0;
-    for (int i = 0; i < weatherRecords.getCount(); ++i) {
+    for (int i = 0; i < weatherRecords.getCount(); ++i)
+    {
         sum += GetValue(weatherRecords[i], dataType);
     }
     return sum;
@@ -32,7 +39,8 @@ double Statistics::CalculateTotal(const Vector<WeatherRecord>& weatherRecords, s
 double Statistics::CalculateAverage(const Vector<WeatherRecord>& weatherRecords, string dataType)
 {
     int count = weatherRecords.getCount();
-    if (count == 0) {
+    if (count == 0)
+    {
         return 0.0;
     }
 
@@ -46,12 +54,14 @@ double Statistics::CalculateStandardDeviation(
     string dataType)
 {
     int count = weatherRecords.getCount();
-    if (count < 2) {
+    if (count < 2)
+    {
         return 0.0; // Cannot calculate sample SD with less than 2 points
     }
 
     double sumSquaredDifferences = 0.0;
-    for (int i = 0; i < count; ++i) {
+    for (int i = 0; i < count; ++i)
+    {
         double value = GetValue(weatherRecords[i], dataType);
         sumSquaredDifferences += pow(value - averageValue, 2);
     }
@@ -62,13 +72,15 @@ double Statistics::CalculateStandardDeviation(
 double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>& dataY)
 {
     int n = dataX.getCount();
-    if (n == 0 || n != dataY.getCount()) {
+    if (n == 0 || n != dataY.getCount())
+    {
         return 0.0; // No data or mismatched data
     }
 
     // Calculate means
     double sumX = 0.0, sumY = 0.0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         sumX += dataX[i];
         sumY += dataY[i];
     }
@@ -80,7 +92,8 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
     double denomX = 0.0;
     double denomY = 0.0;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         double diffX = dataX[i] - meanX;
         double diffY = dataY[i] - meanY;
 
@@ -92,7 +105,8 @@ double Statistics::CalculateSPCC(const Vector<float>& dataX, const Vector<float>
     // Calculate sPCC
     double denominator = sqrt(denomX * denomY);
 
-    if (std::abs(denominator) < 1e-9) {
+    if (std::abs(denominator) < 1e-9)
+    {
         return 0.0; // Avoid division by (near) zero
     }
 
@@ -105,12 +119,14 @@ double Statistics::CalculateMAD(
     string dataType)
 {
     int count = weatherRecords.getCount();
-    if (count == 0) {
+    if (count == 0)
+    {
         return 0.0;
     }
 
     double sumAbsoluteDifferences = 0.0;
-    for (int i = 0; i < count; ++i) {
+    for (int i = 0; i < count; ++i)
+    {
         double value = GetValue(weatherRecords[i], dataType);
         sumAbsoluteDifferences += std::abs(value - averageValue);
     }

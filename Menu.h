@@ -23,7 +23,7 @@ public:
      */
     void ProcessMenuChoice(int choice, const WeatherDatabase& weatherRecords);
 private:
-     // Menu 1: Average wind speed and sample standard deviation (specific month and year)
+    // Menu 1: Average wind speed and sample standard deviation (specific month and year)
     void displayAverageWindSpeedAndStdev(int month, int year, const WeatherDatabase& weatherRecords) const;
 
     // Menu 2: Average ambient air temperature and sample standard deviation (each month of a year)

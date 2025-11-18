@@ -23,7 +23,8 @@ using std::getline;
 static Vector<WeatherRecord> AggregateMonthRecords(const DayMap* dayMap)
 {
     Vector<WeatherRecord> aggregatedRecords;
-    if (dayMap == nullptr) {
+    if (dayMap == nullptr)
+    {
         return aggregatedRecords;
     }
 
@@ -31,7 +32,8 @@ static Vector<WeatherRecord> AggregateMonthRecords(const DayMap* dayMap)
     {
         const Vector<WeatherRecord>& dayVector = it->second;
 
-        for (int i = 0; i < dayVector.getCount(); ++i) {
+        for (int i = 0; i < dayVector.getCount(); ++i)
+        {
             aggregatedRecords.Insert(dayVector[i], aggregatedRecords.getCount());
         }
     }

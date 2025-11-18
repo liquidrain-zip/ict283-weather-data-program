@@ -41,7 +41,8 @@ public:
           m_capacity(myVector.m_capacity),
           m_count(myVector.m_count)
     {
-        for (int i = 0; i < m_count; ++i) {
+        for (int i = 0; i < m_count; ++i)
+        {
             m_vector[i] = myVector.m_vector[i]; // Corrected copy
         }
     }
@@ -133,19 +134,22 @@ Vector<T>::~Vector()
 template <class T>
 Vector<T>& Vector<T>::operator = (const Vector& myVector)
 {
-    if (this == &myVector) {
+    if (this == &myVector)
+    {
         return *this;
     }
 
     // Check if current capacity is enough; if not, reallocate
-    if (m_capacity < myVector.m_count) {
+    if (m_capacity < myVector.m_count)
+    {
         delete[] m_vector;
         m_capacity = myVector.m_capacity;
         m_vector = new T[m_capacity];
     }
 
     m_count = myVector.m_count;
-    for (int i = 0; i < m_count; ++i) {
+    for (int i = 0; i < m_count; ++i)
+    {
         m_vector[i] = myVector.m_vector[i];
     }
     return *this;
@@ -155,7 +159,8 @@ Vector<T>& Vector<T>::operator = (const Vector& myVector)
 template <class T>
 const T& Vector<T>::operator[](int index) const
 {
-    if (index < 0 || index >= m_count) {
+    if (index < 0 || index >= m_count)
+    {
         throw std::out_of_range("Vector index out of bounds (const version).");
     }
     return m_vector[index];
@@ -165,7 +170,8 @@ const T& Vector<T>::operator[](int index) const
 template <class T>
 T& Vector<T>::operator[](int index)
 {
-    if (index < 0 || index >= m_count) {
+    if (index < 0 || index >= m_count)
+    {
         throw std::out_of_range("Vector index out of bounds (non-const version).");
     }
     return m_vector[index];
@@ -235,11 +241,13 @@ template <class T>
 void Vector<T>::Resize()
 {
     int newCapacity = m_capacity * 2;
-    if (newCapacity < 1) newCapacity = INITIAL_CAPACITY;
+    if (newCapacity < 1)
+        newCapacity = INITIAL_CAPACITY;
 
     T* newVector = new T[newCapacity];
 
-    for (int i = 0; i < m_count; ++i) {
+    for (int i = 0; i < m_count; ++i)
+    {
         newVector[i] = m_vector[i];
     }
 

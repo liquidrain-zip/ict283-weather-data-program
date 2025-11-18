@@ -14,7 +14,8 @@ int main()
     // 1. Input / Load
     int recordsCount = weatherController.LoadAllRecordsFromSourceFile(weatherDatabase, filename);
 
-    if (recordsCount > 0) {
+    if (recordsCount > 0)
+    {
         cout << "Successfully loaded " << recordsCount << " weather records." << endl;
     }
     else
@@ -26,12 +27,14 @@ int main()
 
     // 2. Menu
     int choice;
-    do {
+    do
+    {
         weatherMenu.DisplayMenu();
         cout << "Enter your choice: ";
         cin >> choice;
 
-        if (cin.fail()) {
+        if (cin.fail())
+        {
             cout << "Invalid input. Please enter a number from the menu.\n";
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -43,7 +46,8 @@ int main()
 
         cout << endl;
 
-    } while (choice != 5);
+    }
+    while (choice != 5);
 
     return 0;
 }

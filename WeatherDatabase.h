@@ -20,9 +20,18 @@ struct MonthData
     DayMap dayData; // Map of <Day_Number, Vector_Of_Records_For_That_Day>
 
     // Required operators for Bst<MonthData>
-    bool operator<(const MonthData& other) const { return month < other.month; }
-    bool operator>(const MonthData& other) const { return month > other.month; }
-    bool operator==(const MonthData& other) const { return month == other.month; }
+    bool operator<(const MonthData& other) const
+    {
+        return month < other.month;
+    }
+    bool operator>(const MonthData& other) const
+    {
+        return month > other.month;
+    }
+    bool operator==(const MonthData& other) const
+    {
+        return month == other.month;
+    }
 };
 
 /**
@@ -37,9 +46,18 @@ struct YearData
     Bst<MonthData> monthTree; // A BST of all months for this year
 
     // Required operators for Bst<YearData>
-    bool operator<(const YearData& other) const { return year < other.year; }
-    bool operator>(const YearData& other) const { return year > other.year; }
-    bool operator==(const YearData& other) const { return year == other.year; }
+    bool operator<(const YearData& other) const
+    {
+        return year < other.year;
+    }
+    bool operator>(const YearData& other) const
+    {
+        return year > other.year;
+    }
+    bool operator==(const YearData& other) const
+    {
+        return year == other.year;
+    }
 };
 
 

@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Weather" />
+		<Option title="Weather2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Bst.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Controller.cpp" />
 		<Unit filename="Controller.h" />
 		<Unit filename="Date.cpp" />
@@ -38,6 +41,10 @@
 		<Unit filename="DateTest.cpp">
 			<Option compile="0" />
 			<Option link="0" />
+		</Unit>
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Statistics.cpp" />
 		<Unit filename="Statistics.h">
@@ -56,6 +63,13 @@
 		<Unit filename="VectorTest.cpp">
 			<Option compile="0" />
 			<Option link="0" />
+		</Unit>
+		<Unit filename="WeatherDatabase.cpp" />
+		<Unit filename="WeatherDatabase.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="WeatherRecord.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
