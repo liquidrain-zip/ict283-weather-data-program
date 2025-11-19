@@ -95,58 +95,88 @@ $(document).ready(function(){initNavTree('_weather_record_8h_source.html',''); i
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_weather_record.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_weather_record.html">WeatherRecord</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc">   18</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; <a class="code" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc">GetDate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_date; }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">   24</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_time.html">Time</a>&amp; <a class="code" href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">GetTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_time; }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">   30</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">GetWindSpeed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_windSpeed; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc">   18</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; <a class="code" href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc">GetDate</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> m_date;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">   27</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_time.html">Time</a>&amp; <a class="code" href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">GetTime</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> m_time;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">   36</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">GetTemperature</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_temperature; }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">   42</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">GetSolarRadiation</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_solarRadiation; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">SetDate</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; newDate) { m_date = newDate; }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">   36</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">GetWindSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> m_windSpeed;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">   45</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">GetTemperature</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> m_temperature;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">SetTime</a>(<span class="keyword">const</span> <a class="code" href="class_time.html">Time</a>&amp; newTime) { m_time = newTime; }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">SetWindSpeed</a>(<span class="keywordtype">float</span> newSpeed) { m_windSpeed = newSpeed; }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">SetTemperature</a>(<span class="keywordtype">float</span> newTemp) { m_temperature = newTemp; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">   54</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">GetSolarRadiation</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> m_solarRadiation;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">   63</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">SetDate</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; newDate)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        m_date = newDate;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">SetSolarRadiation</a>(<span class="keywordtype">float</span> newRadiation) { m_solarRadiation = newRadiation; }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_date.html">Date</a> m_date = <a class="code" href="class_date.html">Date</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_time.html">Time</a> m_time = <a class="code" href="class_time.html">Time</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">float</span> m_windSpeed = 0.00;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> m_temperature = 0.00;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">float</span> m_solarRadiation = 0.00;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // WEATHERRECORD_H_INCLUDED</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">SetTime</a>(<span class="keyword">const</span> <a class="code" href="class_time.html">Time</a>&amp; newTime)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_time = newTime;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">   81</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">SetWindSpeed</a>(<span class="keywordtype">float</span> newSpeed)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        m_windSpeed = newSpeed;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">SetTemperature</a>(<span class="keywordtype">float</span> newTemp)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        m_temperature = newTemp;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">   99</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">SetSolarRadiation</a>(<span class="keywordtype">float</span> newRadiation)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        m_solarRadiation = newRadiation;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_date.html">Date</a> m_date = <a class="code" href="class_date.html">Date</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="class_time.html">Time</a> m_time = <a class="code" href="class_time.html">Time</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">float</span> m_windSpeed = 0.00;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">float</span> m_temperature = 0.00;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">float</span> m_solarRadiation = 0.00;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // WEATHERRECORD_H_INCLUDED</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_weather_record_html_a38677158f3725d35c5b679db6d0a21cc"><div class="ttname"><a href="class_weather_record.html#a38677158f3725d35c5b679db6d0a21cc">WeatherRecord::GetDate</a></div><div class="ttdeci">const Date &amp; GetDate() const</div><div class="ttdoc">Gets the date of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:18</div></div>
-<div class="ttc" id="aclass_weather_record_html_a010224ea85b7e69f94f19e9ac0b9bd9c"><div class="ttname"><a href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">WeatherRecord::GetWindSpeed</a></div><div class="ttdeci">float GetWindSpeed() const</div><div class="ttdoc">Gets the wind speed.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:30</div></div>
-<div class="ttc" id="aclass_weather_record_html_a42cd0c280e05754e8c6588c3d22e1486"><div class="ttname"><a href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">WeatherRecord::SetTemperature</a></div><div class="ttdeci">void SetTemperature(float newTemp)</div><div class="ttdoc">Sets the ambient temperature.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:66</div></div>
-<div class="ttc" id="aclass_weather_record_html_a99c78ecea07bbe9d426666546b9cc253"><div class="ttname"><a href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">WeatherRecord::SetDate</a></div><div class="ttdeci">void SetDate(const Date &amp;newDate)</div><div class="ttdoc">Sets the date of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:48</div></div>
-<div class="ttc" id="aclass_weather_record_html_a2a4190e5846de5552ecc4add0598d5d7"><div class="ttname"><a href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">WeatherRecord::GetTemperature</a></div><div class="ttdeci">float GetTemperature() const</div><div class="ttdoc">Gets the ambient temperature.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:36</div></div>
+<div class="ttc" id="aclass_weather_record_html_a010224ea85b7e69f94f19e9ac0b9bd9c"><div class="ttname"><a href="class_weather_record.html#a010224ea85b7e69f94f19e9ac0b9bd9c">WeatherRecord::GetWindSpeed</a></div><div class="ttdeci">float GetWindSpeed() const</div><div class="ttdoc">Gets the wind speed.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:36</div></div>
+<div class="ttc" id="aclass_weather_record_html_a42cd0c280e05754e8c6588c3d22e1486"><div class="ttname"><a href="class_weather_record.html#a42cd0c280e05754e8c6588c3d22e1486">WeatherRecord::SetTemperature</a></div><div class="ttdeci">void SetTemperature(float newTemp)</div><div class="ttdoc">Sets the ambient temperature.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:90</div></div>
+<div class="ttc" id="aclass_weather_record_html_a99c78ecea07bbe9d426666546b9cc253"><div class="ttname"><a href="class_weather_record.html#a99c78ecea07bbe9d426666546b9cc253">WeatherRecord::SetDate</a></div><div class="ttdeci">void SetDate(const Date &amp;newDate)</div><div class="ttdoc">Sets the date of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:63</div></div>
+<div class="ttc" id="aclass_weather_record_html_a2a4190e5846de5552ecc4add0598d5d7"><div class="ttname"><a href="class_weather_record.html#a2a4190e5846de5552ecc4add0598d5d7">WeatherRecord::GetTemperature</a></div><div class="ttdeci">float GetTemperature() const</div><div class="ttdoc">Gets the ambient temperature.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:45</div></div>
 <div class="ttc" id="aclass_weather_record_html"><div class="ttname"><a href="class_weather_record.html">WeatherRecord</a></div><div class="ttdoc">Class to hold a single weather record entry. Manages data members privately with public getters and s...</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:11</div></div>
 <div class="ttc" id="aclass_time_html"><div class="ttname"><a href="class_time.html">Time</a></div><div class="ttdoc">Represents a time of day with hour, minute, and second.</div><div class="ttdef"><b>Definition:</b> Time.h:18</div></div>
-<div class="ttc" id="aclass_weather_record_html_a51fca63128baa8e9ad0c9ea8df7713fc"><div class="ttname"><a href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">WeatherRecord::GetTime</a></div><div class="ttdeci">const Time &amp; GetTime() const</div><div class="ttdoc">Gets the time of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:24</div></div>
-<div class="ttc" id="aclass_weather_record_html_a3ba30589f06b307b5cbc46f8b2120f5e"><div class="ttname"><a href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">WeatherRecord::SetTime</a></div><div class="ttdeci">void SetTime(const Time &amp;newTime)</div><div class="ttdoc">Sets the time of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:54</div></div>
-<div class="ttc" id="aclass_weather_record_html_a023e9c1d9d623874de85f07af709962f"><div class="ttname"><a href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">WeatherRecord::GetSolarRadiation</a></div><div class="ttdeci">float GetSolarRadiation() const</div><div class="ttdoc">Gets the solar radiation.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:42</div></div>
+<div class="ttc" id="aclass_weather_record_html_a51fca63128baa8e9ad0c9ea8df7713fc"><div class="ttname"><a href="class_weather_record.html#a51fca63128baa8e9ad0c9ea8df7713fc">WeatherRecord::GetTime</a></div><div class="ttdeci">const Time &amp; GetTime() const</div><div class="ttdoc">Gets the time of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:27</div></div>
+<div class="ttc" id="aclass_weather_record_html_a3ba30589f06b307b5cbc46f8b2120f5e"><div class="ttname"><a href="class_weather_record.html#a3ba30589f06b307b5cbc46f8b2120f5e">WeatherRecord::SetTime</a></div><div class="ttdeci">void SetTime(const Time &amp;newTime)</div><div class="ttdoc">Sets the time of the record.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:72</div></div>
+<div class="ttc" id="aclass_weather_record_html_a023e9c1d9d623874de85f07af709962f"><div class="ttname"><a href="class_weather_record.html#a023e9c1d9d623874de85f07af709962f">WeatherRecord::GetSolarRadiation</a></div><div class="ttdeci">float GetSolarRadiation() const</div><div class="ttdoc">Gets the solar radiation.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:54</div></div>
 <div class="ttc" id="a_date_8h_html"><div class="ttname"><a href="_date_8h.html">Date.h</a></div></div>
 <div class="ttc" id="a_time_8h_html"><div class="ttname"><a href="_time_8h.html">Time.h</a></div></div>
-<div class="ttc" id="aclass_weather_record_html_a069fa9ba9e2a9e64a85c13e394b5007a"><div class="ttname"><a href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">WeatherRecord::SetWindSpeed</a></div><div class="ttdeci">void SetWindSpeed(float newSpeed)</div><div class="ttdoc">Sets the wind speed.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:60</div></div>
-<div class="ttc" id="aclass_weather_record_html_a3f6f8a4dba3e142c2739bbd11dc7129c"><div class="ttname"><a href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">WeatherRecord::SetSolarRadiation</a></div><div class="ttdeci">void SetSolarRadiation(float newRadiation)</div><div class="ttdoc">Sets the solar radiation.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:72</div></div>
+<div class="ttc" id="aclass_weather_record_html_a069fa9ba9e2a9e64a85c13e394b5007a"><div class="ttname"><a href="class_weather_record.html#a069fa9ba9e2a9e64a85c13e394b5007a">WeatherRecord::SetWindSpeed</a></div><div class="ttdeci">void SetWindSpeed(float newSpeed)</div><div class="ttdoc">Sets the wind speed.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:81</div></div>
+<div class="ttc" id="aclass_weather_record_html_a3f6f8a4dba3e142c2739bbd11dc7129c"><div class="ttname"><a href="class_weather_record.html#a3f6f8a4dba3e142c2739bbd11dc7129c">WeatherRecord::SetSolarRadiation</a></div><div class="ttdeci">void SetSolarRadiation(float newRadiation)</div><div class="ttdoc">Sets the solar radiation.</div><div class="ttdef"><b>Definition:</b> WeatherRecord.h:99</div></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Declaration of the Date class.</div><div class="ttdef"><b>Definition:</b> Date.h:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_weather_record_8h.html">WeatherRecord.h</a></li>
-    <li class="footer">Generated on Tue Nov 18 2025 15:14:02 for Weather Data Analysis by
+    <li class="footer">Generated on Wed Nov 19 2025 18:52:38 for Weather Data Analysis by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

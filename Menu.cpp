@@ -88,6 +88,21 @@ static void sPCC_Visit_Func(YearData& yearData, void* userData)
     }
 }
 
+// --- Helper to format the stats string: "Avg(Stdev, Mad)" ---
+static string formatStats(double avg, double stdev, double mad)
+{
+    // Check if the values are valid (not NaN)
+    if (std::isnan(avg) || std::isnan(stdev) || std::isnan(mad)) {
+        return " "; // Return space for blank field
+    }
+
+    stringstream ss;
+    ss << fixed << setprecision(1) << avg << "("
+       << fixed << setprecision(1) << stdev << ", "
+       << fixed << setprecision(1) << mad << ")";
+    return ss.str();
+}
+
 void Menu::DisplayMenu()
 {
     cout << "\nWeather Data Analysis Menu\n";
@@ -269,57 +284,67 @@ void Menu::outputMonthlyWindTempSolarSummary(int year, const WeatherRecords& wea
         return;
     }
 
+    // 1. Print Year on the first line
     outputFile << year << endl;
 
     bool hasAnyMonthlyData = false;
 
+    // 2. Iterate through months
     for (int month = 1; month <= 12; ++month)
     {
         const DayMap* monthData = weatherRecords.GetMonthData(year, month);
-        Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
-        int count = filtered.getCount();
 
-        if (count == 0)
-        {
-            continue; // Skip outputting month if no data
+        // If no data for this month, strictly skip it (as per "No output for March")
+        if (monthData == nullptr || monthData->empty()) {
+            continue;
+        }
+
+        Vector<WeatherRecord> filtered = AggregateMonthRecords(monthData);
+        if (filtered.getCount() == 0) {
+            continue;
         }
 
         hasAnyMonthlyData = true;
 
-        // 1. Wind Speed (S)
-        double avgSpeed = Statistics::CalculateAverage(filtered, WIND_SPEED_COLUMN);
-        double stDevSpeed = Statistics::CalculateStandardDeviation(filtered, avgSpeed, WIND_SPEED_COLUMN);
-        double madSpeed = Statistics::CalculateMAD(filtered, avgSpeed, WIND_SPEED_COLUMN);
+        // --- Calculate Stats ---
 
-        // 2. Ambient Temperature (T)
-        double avgTemp = Statistics::CalculateAverage(filtered, AIR_TEMP_COLUMN);
-        double stDevTemp = Statistics::CalculateStandardDeviation(filtered, avgTemp, AIR_TEMP_COLUMN);
-        double madTemp = Statistics::CalculateMAD(filtered, avgTemp, AIR_TEMP_COLUMN);
+        // Wind Speed (S)
+        double avgS = Statistics::CalculateAverage(filtered, WIND_SPEED_COLUMN);
+        double sdS  = Statistics::CalculateStandardDeviation(filtered, avgS, WIND_SPEED_COLUMN);
+        double madS = Statistics::CalculateMAD(filtered, avgS, WIND_SPEED_COLUMN);
 
-        // 3. Total Solar Radiation (SR)
-        double totalSolarRad = Statistics::CalculateTotal(filtered, SOLAR_RAD_COLUMN);
+        // Ambient Temp (T)
+        double avgT = Statistics::CalculateAverage(filtered, AIR_TEMP_COLUMN);
+        double sdT  = Statistics::CalculateStandardDeviation(filtered, avgT, AIR_TEMP_COLUMN);
+        double madT = Statistics::CalculateMAD(filtered, avgT, AIR_TEMP_COLUMN);
 
+        // Solar Radiation (SR)
+        double totalSR = Statistics::CalculateTotal(filtered, SOLAR_RAD_COLUMN);
+
+        // --- Output Formatting ---
         outputFile << monthNames[month] << ",";
 
-        // 1. Average Wind Speed (S)
-        outputFile << fixed << setprecision(1) << avgSpeed
-                   << "(" << fixed << setprecision(1) << stDevSpeed
-                   << ", " << fixed << setprecision(1) << madSpeed << "),";
+        // Wind Output
+        outputFile << formatStats(avgS, sdS, madS) << ",";
 
-        // 2. Average Ambient Temperature (T)
-        outputFile << fixed << setprecision(1) << avgTemp
-                   << "(" << fixed << setprecision(1) << stDevTemp
-                   << ", " << fixed << setprecision(1) << madTemp << "),";
+        // Temp Output
+        outputFile << formatStats(avgT, sdT, madT) << ",";
 
-        // 3. Total Solar Radiation (SR)
-        outputFile << fixed << setprecision(1) << totalSolarRad << endl;
+        // Solar Output (Check validity if necessary, otherwise print)
+        if (std::isnan(totalSR)) {
+             outputFile << " "; // Blank field if NaN
+        } else {
+             outputFile << fixed << setprecision(2) << totalSR;
+        }
+
+        outputFile << endl;
     }
 
+    // Handle case where the entire year has no data
     if (!hasAnyMonthlyData)
     {
-        // Case: If the entire year’s data is not available
         outputFile << "No Data" << endl;
-        cout << "No data found for year " << year << ". Output written to WindTempSolar.csv" << endl;
+        cout << "No data found for year " << year << ". 'No Data' written to file." << endl;
     }
     else
     {
