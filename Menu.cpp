@@ -41,7 +41,7 @@ static Vector<WeatherRecord> AggregateMonthRecords(const DayMap* dayMap)
 }
 
 /**
- * @brief Context struct to hold data for the sPCC collector.
+ * @brief struct to hold data for the sPCC collector.
  */
 struct SPCC_Collector
 {
@@ -239,9 +239,7 @@ void Menu::displayMonthlyTemperatureAveragesAndStdev(int year, const WeatherReco
     }
 }
 
-// ---
 // Menu Option 3
-// ---
 void Menu::displaySPCC(int month, const WeatherRecords& weatherRecords) const
 {
     // Create the collector
@@ -274,7 +272,7 @@ void Menu::displaySPCC(int month, const WeatherRecords& weatherRecords) const
     cout << "T_R: " << fixed << setprecision(2) << t_r << endl;
 }
 
-// Menu Option 4 (Output to File)
+// Menu Option 4
 void Menu::outputMonthlyWindTempSolarSummary(int year, const WeatherRecords& weatherRecords) const
 {
     ofstream outputFile("WindTempSolar.csv");

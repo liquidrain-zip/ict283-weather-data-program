@@ -16,7 +16,7 @@ void WeatherDatabase::Insert(const WeatherRecord& record)
     {
         // Year doesn't exist, create it and insert it
         m_yearTree.Insert(searchYear);
-        // Now find the node we just inserted
+        // find the node that was just inserted
         yearNode = m_yearTree.Search(searchYear);
     }
 
@@ -29,7 +29,7 @@ void WeatherDatabase::Insert(const WeatherRecord& record)
     {
         // Month doesn't exist for this year, create and insert it
         yearNode->monthTree.Insert(searchMonth);
-        // Now find the node we just inserted
+        // find the node that was just inserted
         monthNode = yearNode->monthTree.Search(searchMonth);
     }
 
