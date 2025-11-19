@@ -8,12 +8,6 @@ using std::endl;
 using std::runtime_error;
 
 /**
- * @brief Forward declaration of the Node struct
- */
-template <class T>
-struct Node;
-
-/**
  * @brief Function pointer type definition
  * C-style "visit" function pointer. It takes a reference to the data and a 'void*' for user-defined context.
  */

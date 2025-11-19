@@ -1,5 +1,5 @@
 <map id="Node&lt; T &gt;" name="Node&lt; T &gt;">
-<area shape="rect" id="node1" title="Forward declaration of the Node struct." alt="" coords="108,5,191,112"/>
+<area shape="rect" id="node1" title="Represents a node in the Binary Search Tree." alt="" coords="108,5,191,112"/>
 <area shape="rect" id="node2" href="$struct_node.html" title=" " alt="" coords="5,175,136,281"/>
 <area shape="rect" id="node3" href="$struct_node.html" title=" " alt="" coords="160,175,299,281"/>
 </map>

@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
 "_bst_8h.html":[1,0,0],
-"_bst_8h.html#a473f8d3b551e375a6f61e6912040d520":[1,0,0,3],
+"_bst_8h.html#a473f8d3b551e375a6f61e6912040d520":[1,0,0,2],
 "_bst_8h_source.html":[1,0,0],
 "_controller_8cpp.html":[1,0,1],
 "_controller_8h.html":[1,0,2],
