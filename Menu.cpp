@@ -247,10 +247,6 @@ void Menu::displaySPCC(int month, const WeatherRecords& weatherRecords) const
     collector.targetMonth = month;
 
     // Run the traversal
-    // I cast away 'const' here to call TraverseYears, which calls a
-    // non-const BST InOrder. This is a design trade-off.
-    // A better way would be to have const- and non-const traversals.
-    // For this assignment, this cast is the simplest solution.
     WeatherDatabase& nonConstDB = const_cast<WeatherDatabase&>(weatherRecords);
     nonConstDB.TraverseYears(sPCC_Visit_Func, &collector);
 
