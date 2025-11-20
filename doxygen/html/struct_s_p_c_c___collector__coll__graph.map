@@ -1,5 +1,5 @@
 <map id="SPCC_Collector" name="SPCC_Collector">
-<area shape="rect" id="node1" title="Context struct to hold data for the sPCC collector." alt="" coords="5,608,141,685"/>
+<area shape="rect" id="node1" title="struct to hold data for the sPCC collector." alt="" coords="5,608,141,685"/>
 <area shape="rect" id="node2" href="$class_vector.html" title=" " alt="" coords="18,292,129,516"/>
 <area shape="rect" id="node3" href="$class_vector.html" title=" " alt="" coords="18,5,129,229"/>
 </map>

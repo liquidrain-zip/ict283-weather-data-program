@@ -81,11 +81,6 @@ public:
      */
     void DestroyTree();
 
-    // ---
-    // MODIFIED TRAVERSAL ROUTINES
-    //    Takes a function pointer and user data.
-    // ---
-
     /**
      * @brief Performs an InOrder traversal, calling 'visit_func' on each node.
      * @param visit_func The function pointer to call for each item.
